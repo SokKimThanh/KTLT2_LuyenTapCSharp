@@ -27,7 +27,7 @@ namespace KTLT2_TAODOITUONG
         /// <summary>
         /// Khong co static thi phai new GradeBook
         /// </summary>
-        public void MainProgram()
+        public void Main()
         {
             Random n = new Random();
             WriteLine($"Vui long nhap K so can so sanh: ");

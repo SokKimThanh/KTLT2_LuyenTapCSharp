@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using KTLT2_TAODOITUONG.src.RapChieuPhim;
+using System.Collections.Generic;
 using static System.Console;
 namespace KTLT2_TAODOITUONG
 {
-    class MainMenu
+    class MainMenu_SinhVien
     {
         public static void ShowMainMenu(string[] arrMenu, out List<SinhVien> arrSinhVien, TablePrinter tableSinhVien, TablePrinter tableMenu, out SinhVien svGioiNhat)
         {
@@ -56,7 +57,7 @@ namespace KTLT2_TAODOITUONG
                             }
                             SinhVien.TimSinhVienGioiNhat(arrSinhVien, out svGioiNhat);
                             string diemTBChiTiet = SinhVien.GetDiemTBCT(svGioiNhat);
-                            //remove all 
+                            // remove all 
                             tableSinhVien.RemoveAll(arrSinhVien);
                             // add only result.
                             tableSinhVien.AddRow(svGioiNhat.id, svGioiNhat.hoTen, $"{svGioiNhat.ngaySinh:dd/MM/yyyy}", svGioiNhat.diemTBTN, svGioiNhat.xepLoai, diemTBChiTiet);
@@ -69,8 +70,17 @@ namespace KTLT2_TAODOITUONG
                     case 4:
                         {
                             WriteLine(arrMenu[3]);
-                            B_GradeBook a = new B_GradeBook();
-                            a.MainProgram();
+                            B_GradeBook gradeBook = new B_GradeBook();
+                            gradeBook.Main();
+                            WriteLine(arrMenu[arrMenu.Length - 2]);
+                            ReadKey();
+                            break;
+                        }
+                    case 5:
+                        {
+                            WriteLine(arrMenu[4]);
+                            Main_RapChieuPhim rapChieuPhim = new Main_RapChieuPhim();
+                            rapChieuPhim.Main();
                             WriteLine(arrMenu[arrMenu.Length - 2]);
                             ReadKey();
                             break;
@@ -88,8 +98,6 @@ namespace KTLT2_TAODOITUONG
                 }
 
             } while (n != -1);
-
-
         }
 
         static void Main(string[] args)
@@ -99,6 +107,7 @@ namespace KTLT2_TAODOITUONG
                 "Thao doc/ghi tu file thong tin sinh vien: ",
                 "In Thong tin sinh vien co diem trung binh tot nghiep lon nhat",
                 "Quan ly diem sach",
+                "Rap chieu phim",
                 "Connect database",
                 "Create table Sinh Vien",
                 "Create table Bang Diem",
@@ -107,8 +116,8 @@ namespace KTLT2_TAODOITUONG
             };
             string[] titles = { "MSSV", "Ho Ten", "Ngay Sinh", "Diem trung binh tot nghiep", "Xep loai", "Diem Trung binh chi tiet" };
             string[] menuTitle = { "STT", "Ten chuc nang" };
-            TablePrinter tableSinhVien = new TablePrinter(titles);
 
+            TablePrinter tableSinhVien = new TablePrinter(titles);
             TablePrinter tableMenu = new TablePrinter(menuTitle);
 
             for (int i = 0; i < arrMenu.Length - 5; i++)

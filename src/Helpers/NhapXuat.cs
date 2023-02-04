@@ -12,6 +12,16 @@ namespace KTLT2_TAODOITUONG
             }
             WriteLine();
         }
+        public string XuatMang1D(int[] arr)
+        {
+            string sum = string.Empty;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                sum += arr[i] + "\t";
+            }
+            WriteLine();
+            return sum;
+        }
         public void XuatMang1D(string[] arr)
         {
             for (int i = 0; i < arr.Length; i++)

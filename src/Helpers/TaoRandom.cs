@@ -47,6 +47,17 @@ namespace KTLT2_TAODOITUONG
             return id;
         }
         /// <summary>
+        /// Hàm này cho phép tạo random trạng thái true/false
+        /// </summary>
+        /// <returns></returns>
+        public static bool RanDomBoolean()
+        {
+            Random r = new Random();
+            var randomBool = r.Next(2) == 1; // 0 = false, 1 = true;
+            return randomBool;
+        }
+
+        /// <summary>
         /// Hàm kiểm tra thử trước khi sử dụng
         /// </summary>
         public static void UnitTest()

@@ -81,5 +81,21 @@ namespace KTLT2_TAODOITUONG
             lengths.ForEach(l => System.Console.Write("+-" + new string('-', l) + '-'));
             System.Console.WriteLine("+");
         }
+
+
+        public void NhapMenu(string[] arr, int hideRow)
+        {
+            for (int i = 0; i < arr.Length - hideRow; i++)
+            {
+                AddRow(i, arr[i]);
+            }
+        }
+        public void NhapMenu(string[] arr)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                AddRow(i+1, arr[i]);
+            }
+        }
     }
 }
