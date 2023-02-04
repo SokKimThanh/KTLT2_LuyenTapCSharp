@@ -26,9 +26,11 @@ namespace KTLT2_TAODOITUONG.src.RapChieuPhim
         public MaGhe getMaGhe() { return maGhe; }
         public bool getTrangThaiGheTrong() { return trangThaiGheTrong; }
 
+
         public string ToPrint()
         {
-            return $"{maGhe.ToPrint()}-{trangThaiGheTrong}\t";
+            string s = trangThaiGheTrong == true ? "open" : "locked";
+            return $"{maGhe.ToPrint()}-{s}\t";
         }
     }
 }

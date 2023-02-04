@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using static System.Console;
 using System.Threading;
+using System.Linq;
+
 namespace KTLT2_TAODOITUONG.src.RapChieuPhim
 {
     class RapChieuPhim
@@ -63,7 +65,10 @@ namespace KTLT2_TAODOITUONG.src.RapChieuPhim
             {
                 foreach (var ghe in gheNgoi)
                 {
-                    Write(ghe.ToPrint());
+                    if (ghe != null)
+                    {
+                        Write(ghe.ToPrint());
+                    }
                 }
                 WriteLine("\n");
             }
@@ -224,6 +229,42 @@ namespace KTLT2_TAODOITUONG.src.RapChieuPhim
             }
             return hangGheArr;
         }
+        public bool KiemTraGheTrong(GheNgoi a)
+        {
+            if (a.getTrangThaiGheTrong() == false)
+            {
+                return false;
+            }
+            return true;
+        }
+        /// <summary>
+        /// Hàm kiêm tra ghê ngồi ngoài biên đã hết chỗ trống hay chưa?
+        /// </summary>
+        /// <param name="arr">Danh sách ghế ngồi trong rạp</param>
+        /// <returns>False : TÌm thấy ghế trống/ True: không còn ghế trống</returns>
+        public List<GheNgoi[]> KiemTraGheTrongNgoaiBien(List<GheNgoi[]> arr)
+        {
+            GheNgoi[] hangGheTrongdauBien = new GheNgoi[arr[0].Length];
+            GheNgoi[] hangGheTrongCuoiBien = new GheNgoi[arr[0].Length];
+            List<GheNgoi[]> danhSachGheNgoi = new List<GheNgoi[]>();
 
+            for (int i = 0; i < arr.Count; i++)
+            {
+                //false : đã đặt chỗ/ true: còn trống chỗ
+                if (KiemTraGheTrong(arr[i][0]))
+                {
+                    // tìm thấy một chỗ còn trống biên đầu
+                    hangGheTrongdauBien[i] = arr[i][0];
+                }
+                if (KiemTraGheTrong(arr[i][arr[i].Length - 1]))
+                {
+                    // tìm thấy một chỗ còn trống biên cuối 
+                    hangGheTrongCuoiBien[i] = arr[i][arr[i].Length - 1];
+                }
+            }
+            danhSachGheNgoi.Add(hangGheTrongdauBien);
+            danhSachGheNgoi.Add(hangGheTrongCuoiBien);
+            return danhSachGheNgoi;
+        }
     }
 }
