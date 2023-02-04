@@ -80,7 +80,7 @@ namespace KTLT2_TAODOITUONG
                         {
                             WriteLine(arrMenu[4]);
                             Main_RapChieuPhim rapChieuPhim = new Main_RapChieuPhim();
-                            rapChieuPhim.Main();
+                            rapChieuPhim.GetSubMenu();
                             WriteLine(arrMenu[arrMenu.Length - 2]);
                             ReadKey();
                             break;

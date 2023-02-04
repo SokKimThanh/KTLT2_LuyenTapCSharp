@@ -147,13 +147,31 @@ namespace KTLT2_TAODOITUONG.src.RapChieuPhim
                             ReadKey();
                             break;
                         }
+                    case 8:// Kiểm tra tất cả các ghế ngoài biên đã được đặt chỗ hay chưa
+                        {
+                            WriteLine(arrMenu[7]);
+                            if (danhSachGheNgoiTrongRap.Count == 0 || danhSachGheNgoiTrongRap == null)
+                            {
+                                WriteLine("chua co danh sach vui long nhap lai!");
+                                ReadKey();
+                                break;
+                            }
+                            RapChieuPhim.XuatMang2D(danhSachGheNgoiTrongRap);
+                            List<GheNgoi[]> is2BienConGheTrong = rapChieuPhim.KiemTraGheTrongNgoaiBien(danhSachGheNgoiTrongRap);
+
+
+                            WriteLine("Danh sach ghe trong 2 bien la: ");
+                            RapChieuPhim.XuatMang2D(is2BienConGheTrong);
+                            ReadKey();
+                            break;
+                        }
                     default:
                         break;
                 }
             }
             while (n != -1);
         }
-        public void Main()
+        public void GetSubMenu()
         {
             // tao menu rap chieu phim
             string[] arrMenu = new string[]
