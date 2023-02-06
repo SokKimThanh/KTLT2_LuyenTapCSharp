@@ -85,6 +85,15 @@ namespace KTLT2_TAODOITUONG
                             ReadKey();
                             break;
                         }
+                    case 6:// Bảng thống kê kết quả tuyển sinh
+                        {
+                            WriteLine(arrMenu[5]);
+                            Main_BangThongKeKetQuaTuyenSinh bangTuyenSinh = new Main_BangThongKeKetQuaTuyenSinh();
+                            bangTuyenSinh.GetSubmenu();
+                            WriteLine(arrMenu[arrMenu.Length - 2]);
+                            ReadKey();
+                            break;
+                        }
                     default:
                         {
                             if (n == -1)
@@ -108,6 +117,7 @@ namespace KTLT2_TAODOITUONG
                 "In Thong tin sinh vien co diem trung binh tot nghiep lon nhat",
                 "Quan ly diem sach",
                 "Rap chieu phim",
+                "Bang thong ke ket qua tuyen sinh",
                 "Connect database",
                 "Create table Sinh Vien",
                 "Create table Bang Diem",
