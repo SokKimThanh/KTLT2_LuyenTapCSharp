@@ -94,7 +94,7 @@ namespace KTLT2_TAODOITUONG
         {
             for (int i = 0; i < arr.Length; i++)
             {
-                AddRow(i+1, arr[i]);
+                AddRow(i + 1, arr[i]);
             }
         }
     }

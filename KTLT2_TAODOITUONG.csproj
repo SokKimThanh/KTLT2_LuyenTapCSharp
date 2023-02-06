@@ -43,9 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\BangThongKeKetQuaTuyenSinh\LoaiDoiTuong.cs" />
+    <Compile Include="src\BangThongKeKetQuaTuyenSinh\BangThongKe.cs" />
+    <Compile Include="src\BangThongKeKetQuaTuyenSinh\DoiTuongTuyenSinh.cs" />
     <Compile Include="src\BangThongKeKetQuaTuyenSinh\LoaiKhoa.cs" />
-    <Compile Include="src\BangThongKeKetQuaTuyenSinh\Main_BangThongKeKetQuaTuyenSinh.cs" />
+    <Compile Include="src\BangThongKeKetQuaTuyenSinh\SubMenu_BangThongKeKetQuaTuyenSinh.cs" />
     <Compile Include="src\BangThongKeKetQuaTuyenSinh\ThiSinh.cs" />
     <Compile Include="src\SinhVien\BangDiem.cs" />
     <Compile Include="src\Book\B_Book.cs" />
@@ -58,7 +59,7 @@
     <Compile Include="src\SinhVien\NhapXuatSinhVien.cs" />
     <Compile Include="src\RapChieuPhim\GheNgoi.cs" />
     <Compile Include="src\RapChieuPhim\MaGhe.cs" />
-    <Compile Include="src\RapChieuPhim\Main_RapChieuPhim.cs" />
+    <Compile Include="src\RapChieuPhim\SubMenu_RapChieuPhim.cs" />
     <Compile Include="src\RapChieuPhim\RapChieuPhim.cs" />
     <Compile Include="src\SinhVien\SinhVien.cs" />
     <Compile Include="src\Helpers\TaoRandom.cs" />

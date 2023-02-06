@@ -2,6 +2,9 @@
 using static System.Console;
 namespace KTLT2_TAODOITUONG
 {
+    /// <summary>
+    /// Class hỗ trợ tạo kiểu dữ liệu nhập tự động
+    /// </summary>
     internal class TaoRandom
     {
         public static char TaoKiTuChuThuong()
@@ -31,11 +34,34 @@ namespace KTLT2_TAODOITUONG
             Random l = new Random();
             return $"{l.Next(0, 31)}/{l.Next(0, 12)}/{l.Next(1900, DateTime.Now.Year)}";
         }
+        /// <summary>
+        /// Hàm tạo tự động ngày tháng năm theo định dạng chuẩn MM/dd/yyyy
+        /// </summary>
+        /// <param name="format">Null trả về dd/MM/yyyy, "MM/dd/YYYY" trả về MM/dd/yyyy</param>
+        /// <returns>Trả về định dạng dd/MM/yyyy nếu null hoặc mặc định, hoặc chủ động MM/dd/yyyy</returns>
+        public static string TaoNgaySinhTuDongString(string format)
+        {
+            Random l = new Random();
+            if (format == null)
+            {
+                return $"{l.Next(0, 31)}/{l.Next(0, 12)}/{l.Next(1900, DateTime.Now.Year)}";
+            }
+            if (format.ToLower() == "MM/dd/yyyy".ToLower())
+            {
+                return $"{l.Next(0, 12)}/{l.Next(0, 31)}/{l.Next(1900, DateTime.Now.Year)}";
+            }
+            return $"{l.Next(0, 31)}/{l.Next(0, 12)}/{l.Next(1900, DateTime.Now.Year)}";
+        }
         public static DateTime TaoNgaySinhTuDongDateTime()
         {
             Random l = new Random();
             return new DateTime(l.Next(1900, DateTime.Now.Year), l.Next(0, 12), l.Next(0, 31));
         }
+        /// <summary>
+        /// Tạo Id tự động có bội số 3 kí tự
+        /// </summary>
+        /// <param name="length">số lượng kí tự chia cho 3</param>
+        /// <returns></returns>
         public static string TaoIDTuDong(int length)
         {
             Random r = new Random();

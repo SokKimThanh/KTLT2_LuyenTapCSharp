@@ -7,7 +7,7 @@ namespace KTLT2_TAODOITUONG.src.RapChieuPhim
     /// <summary>
     /// Lớp đối tượng này là menu điều khiển lựa chọn cho chương trình rạp chiếu phim
     /// </summary>
-    class Main_RapChieuPhim
+    class SubMenu_RapChieuPhim
     {
         private void ShowMainMenu(string[] arrMenu, TablePrinter tableMenu)
         {

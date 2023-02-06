@@ -79,7 +79,7 @@ namespace KTLT2_TAODOITUONG
                     case 5:
                         {
                             WriteLine(arrMenu[4]);
-                            Main_RapChieuPhim rapChieuPhim = new Main_RapChieuPhim();
+                            SubMenu_RapChieuPhim rapChieuPhim = new SubMenu_RapChieuPhim();
                             rapChieuPhim.GetSubMenu();
                             WriteLine(arrMenu[arrMenu.Length - 2]);
                             ReadKey();
@@ -88,7 +88,7 @@ namespace KTLT2_TAODOITUONG
                     case 6:// Bảng thống kê kết quả tuyển sinh
                         {
                             WriteLine(arrMenu[5]);
-                            Main_BangThongKeKetQuaTuyenSinh bangTuyenSinh = new Main_BangThongKeKetQuaTuyenSinh();
+                            SubMenu_BangThongKeKetQuaTuyenSinh bangTuyenSinh = new SubMenu_BangThongKeKetQuaTuyenSinh();
                             bangTuyenSinh.GetSubmenu();
                             WriteLine(arrMenu[arrMenu.Length - 2]);
                             ReadKey();
