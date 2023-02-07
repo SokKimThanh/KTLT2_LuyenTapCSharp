@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\BangThongKeKetQuaTuyenSinh\BangThongKe.cs" />
+    <Compile Include="src\BangThongKeKetQuaTuyenSinh\KetQuaTuyenSinh.cs" />
     <Compile Include="src\BangThongKeKetQuaTuyenSinh\DoiTuongTuyenSinh.cs" />
     <Compile Include="src\BangThongKeKetQuaTuyenSinh\LoaiKhoa.cs" />
     <Compile Include="src\BangThongKeKetQuaTuyenSinh\SubMenu_BangThongKeKetQuaTuyenSinh.cs" />

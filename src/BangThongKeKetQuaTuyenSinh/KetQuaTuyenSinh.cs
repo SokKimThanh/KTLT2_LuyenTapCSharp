@@ -6,16 +6,16 @@ using System;
 using static System.Console;
 namespace KTLT2_TAODOITUONG.src.BangThongKeKetQuaTuyenSinh
 {
-    class BangThongKe
+    class KetQuaTuyenSinh
     {
 
         public string phongHoc;
 
         public string ketQua;
 
-        public BangThongKe() { }
+        public KetQuaTuyenSinh() { }
 
-        public BangThongKe(string phongHoc, string ketQua)
+        public KetQuaTuyenSinh(string phongHoc, string ketQua)
         {
             this.phongHoc = phongHoc;
             this.ketQua = ketQua;
@@ -50,10 +50,20 @@ namespace KTLT2_TAODOITUONG.src.BangThongKeKetQuaTuyenSinh
         /// <returns> True neu thi sinh co tong diem >= diem chuan thi dau; False nguoc lai thi rot</returns>
         public string GetKetQua(LoaiKhoa khoa, ThiSinh thiSinh)
         {
-            if (khoa.diemChuan <= thiSinh.tongDiem)
+            if (khoa.GetDiemChuan() <= thiSinh.GetTongDiem())
                 return "Đậu";
             else
                 return "Rớt";
+        }
+
+        internal static KetQuaTuyenSinh[] NhapDanhSachKQTS(int k)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal static TablePrinter XuatMang1D(KetQuaTuyenSinh[] dsKetQuaTS)
+        {
+            throw new NotImplementedException();
         }
     }
 }

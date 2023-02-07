@@ -8,10 +8,10 @@ namespace KTLT2_TAODOITUONG.src.BangThongKeKetQuaTuyenSinh
         // id:int dung cho csdl tu dong tang; Không hiển thị với người dùng
         readonly int id;
 
-        public string soBaoDanh;
-        public string hoVaTen;
-        public DateTime ngaySinh;
-        public double tongDiem;
+        private string soBaoDanh;
+        private string hoVaTen;
+        private DateTime ngaySinh;
+        private double tongDiem;
 
         public ThiSinh(string soBaoDanh, string hoVaTen, DateTime ngaySinh, double tongDiem)
         {
@@ -73,7 +73,10 @@ namespace KTLT2_TAODOITUONG.src.BangThongKeKetQuaTuyenSinh
             }
             return tableLoaiKhoa;
         }
-
+        public double GetTongDiem()
+        {
+            return tongDiem;
+        }
         public string ToPrint()
         {
             return $"{soBaoDanh}{hoVaTen}{ngaySinh}";

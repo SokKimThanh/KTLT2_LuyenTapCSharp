@@ -4,8 +4,8 @@ namespace KTLT2_TAODOITUONG.src.BangThongKeKetQuaTuyenSinh
 {
     class DoiTuongTuyenSinh
     {
-        public int maDoiTuong;
-        public string tenDoiTuong;
+        private int maDoiTuong;
+        private string tenDoiTuong;
 
         public DoiTuongTuyenSinh() { }
 
@@ -56,6 +56,7 @@ namespace KTLT2_TAODOITUONG.src.BangThongKeKetQuaTuyenSinh
                 return "";
             }
         }
+
         public string ToPrint()
         {
             return $"{maDoiTuong}{tenDoiTuong}";

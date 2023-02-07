@@ -5,9 +5,9 @@ namespace KTLT2_TAODOITUONG.src.BangThongKeKetQuaTuyenSinh
 {
     class LoaiKhoa
     {
-        public string maKhoa;
-        public string tenKhoa;
-        public double diemChuan;
+        private string maKhoa;
+        private string tenKhoa;
+        private double diemChuan;
 
         public LoaiKhoa() { }
 
@@ -50,7 +50,10 @@ namespace KTLT2_TAODOITUONG.src.BangThongKeKetQuaTuyenSinh
 
             return danhSach;
         }
-
+        public double GetDiemChuan()
+        {
+            return diemChuan;
+        }
         public string GetMaKhoa()
         {
             return maKhoa;

@@ -13,10 +13,11 @@ namespace KTLT2_TAODOITUONG
         public void ShowMenu(TablePrinter tableMenu, string[] arrMenu)
         {
             int n;
-            BangThongKe bangThongKe;
+            KetQuaTuyenSinh bangThongKe;
             DoiTuongTuyenSinh[] dsDTTS;
             LoaiKhoa[] dsLoaiKhoa;
             ThiSinh[] dsThiSinh;
+            KetQuaTuyenSinh[] dsKetQuaTS;
             TablePrinter tableLoaiKhoa;
             TablePrinter tableThongKe;
             TablePrinter tableThiSinh;
@@ -79,10 +80,16 @@ namespace KTLT2_TAODOITUONG
                             ReadKey();
                             break;
                         }
-                    case 4:
+                    case 4://Nhập danh sách kết quả tuyển sinh
                         {
                             WriteLine(arrMenu[3]);
-
+                            WriteLine("Vui Long nhap danh ket qua tuyen sinh: ");
+                            int.TryParse(ReadLine(), out int k);
+                            // format table
+                            WriteLine("Xuat danh sach tuyen sinh");
+                            dsKetQuaTS = KetQuaTuyenSinh.NhapDanhSachKQTS(k);
+                            tableThiSinh = KetQuaTuyenSinh.XuatMang1D(dsKetQuaTS);
+                            tableThiSinh.Print();
                             WriteLine(arrMenu[arrMenu.Length - 2]);
                             ReadKey();
                             break;
@@ -145,6 +152,7 @@ namespace KTLT2_TAODOITUONG
                 "Nhap/Xuat danh sach doi tuong tuyen sinh",
                 "Nhap/Xuat danh sach loai khoa",
                 "Nhap/xuat danh sach thi sinh",
+                "Nhap Danh Sach Thong Ke Ket qua Tuyen Sinh",
                 "Xuat ten khoa",
                 "Xuat ten doi tuong tuyen sinh",
                 "Xuat ten phong hoc",
