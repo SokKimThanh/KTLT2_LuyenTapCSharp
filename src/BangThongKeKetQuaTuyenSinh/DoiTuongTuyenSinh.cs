@@ -71,5 +71,15 @@ namespace KTLT2_TAODOITUONG.src.BangThongKeKetQuaTuyenSinh
             }
             return table;
         }
+
+        internal int GetMaDoiTuong()
+        {
+            return maDoiTuong;
+        }
+
+        internal string GetTenDoiTuong()
+        {
+            return tenDoiTuong;
+        }
     }
 }

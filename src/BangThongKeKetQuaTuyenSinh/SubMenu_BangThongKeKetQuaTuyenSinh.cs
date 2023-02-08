@@ -13,11 +13,10 @@ namespace KTLT2_TAODOITUONG
         public void ShowMenu(TablePrinter tableMenu, string[] arrMenu)
         {
             int n;
-            KetQuaTuyenSinh bangThongKe;
-            DoiTuongTuyenSinh[] dsDTTS;
-            LoaiKhoa[] dsLoaiKhoa;
-            ThiSinh[] dsThiSinh;
-            KetQuaTuyenSinh[] dsKetQuaTS;
+            DoiTuongTuyenSinh[] dsDTTS = new DoiTuongTuyenSinh[] { }; ;
+            LoaiKhoa[] dsLoaiKhoa = new LoaiKhoa[] { };
+            ThiSinh[] dsThiSinh = new ThiSinh[] { };
+            KetQuaTuyenSinh[] dsKetQuaTS = new KetQuaTuyenSinh[] { };
             TablePrinter tableLoaiKhoa;
             TablePrinter tableThongKe;
             TablePrinter tableThiSinh;
@@ -84,12 +83,33 @@ namespace KTLT2_TAODOITUONG
                         {
                             WriteLine(arrMenu[3]);
                             WriteLine("Vui Long nhap danh ket qua tuyen sinh: ");
-                            int.TryParse(ReadLine(), out int k);
+                            //Kiem tra danh
+                            if (dsThiSinh == null || dsThiSinh.Length == 0)
+                            {
+                                WriteLine("Vui long nhap danh sach thi sinh");
+                                WriteLine(arrMenu[arrMenu.Length - 2]);
+                                ReadKey();
+                                break;
+                            }
+                            if (dsLoaiKhoa == null || dsLoaiKhoa.Length == 0)
+                            {
+                                WriteLine("Vui long nhap danh sach loai khoa");
+                                WriteLine(arrMenu[arrMenu.Length - 2]);
+                                ReadKey();
+                                break;
+                            }
+                            if (dsDTTS == null || dsDTTS.Length == 0)
+                            {
+                                WriteLine("Vui long nhap danh sach doi tuong tuyen sinh");
+                                WriteLine(arrMenu[arrMenu.Length - 2]);
+                                ReadKey();
+                                break;
+                            }
                             // format table
                             WriteLine("Xuat danh sach tuyen sinh");
-                            dsKetQuaTS = KetQuaTuyenSinh.NhapDanhSachKQTS(k);
-                            tableThiSinh = KetQuaTuyenSinh.XuatMang1D(dsKetQuaTS);
-                            tableThiSinh.Print();
+                            dsKetQuaTS = KetQuaTuyenSinh.NhapDanhSachKQTS(dsThiSinh, dsLoaiKhoa, dsDTTS);
+                            tableThongKe = KetQuaTuyenSinh.XuatMang1D(dsKetQuaTS);
+                            tableThongKe.Print();
                             WriteLine(arrMenu[arrMenu.Length - 2]);
                             ReadKey();
                             break;

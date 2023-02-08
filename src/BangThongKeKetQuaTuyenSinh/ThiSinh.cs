@@ -81,5 +81,20 @@ namespace KTLT2_TAODOITUONG.src.BangThongKeKetQuaTuyenSinh
         {
             return $"{soBaoDanh}{hoVaTen}{ngaySinh}";
         }
+
+        internal string GetSoBaoDanh()
+        {
+            return soBaoDanh;
+        }
+
+        internal string GetHoVaTen()
+        {
+            return hoVaTen;
+        }
+
+        internal DateTime GetNgaySinh()
+        {
+            return ngaySinh;
+        }
     }
 }

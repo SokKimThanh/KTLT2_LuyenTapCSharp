@@ -50,15 +50,18 @@ namespace KTLT2_TAODOITUONG.src.BangThongKeKetQuaTuyenSinh
 
             return danhSach;
         }
-        public double GetDiemChuan()
+        internal double GetDiemChuan()
         {
             return diemChuan;
         }
-        public string GetMaKhoa()
+        internal string GetMaKhoa()
         {
             return maKhoa;
         }
-
+        internal string GetTenKhoa()
+        {
+            return tenKhoa;
+        }
         public string ToPrint()
         {
             return $"{maKhoa}{tenKhoa}";
@@ -73,5 +76,7 @@ namespace KTLT2_TAODOITUONG.src.BangThongKeKetQuaTuyenSinh
             }
             return tableLoaiKhoa;
         }
+
+
     }
 }
