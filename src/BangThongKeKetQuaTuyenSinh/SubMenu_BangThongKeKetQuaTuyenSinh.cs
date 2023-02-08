@@ -3,7 +3,11 @@
  * Submenu bảng thống kê kết quả tuyển sinh
  */
 using KTLT2_TAODOITUONG.src.BangThongKeKetQuaTuyenSinh;
+using KTLT2_TAODOITUONG.src.Helpers;
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using static System.Console;
 namespace KTLT2_TAODOITUONG
 {
@@ -114,9 +118,39 @@ namespace KTLT2_TAODOITUONG
                             ReadKey();
                             break;
                         }
-                    case 5:
+                    case 5:// Sắp xếp bảng tính tăng dần theo cột họ tên
                         {
                             WriteLine(arrMenu[4]);
+                            //KetQuaTuyenSinh ketqquaTsmax = dsKetQuaTS[0];
+
+                            // Kiem Tra ket qua
+                            if (dsKetQuaTS == null || dsKetQuaTS.Length == 0)
+                            {
+                                WriteLine("Vui long nhap danh sach ket qua tuyen sinh");
+                                WriteLine(arrMenu[arrMenu.Length - 2]);
+                                ReadKey();
+                                break;
+                            }
+                            // in ket qua 1
+                            WriteLine("Danh sach ket qua tuyen sinh chua duoc sap xep");
+                            tableThongKe = KetQuaTuyenSinh.XuatMang1D(dsKetQuaTS);
+                            tableThongKe.Print();
+
+                            // khai bao
+                            List<KetQuaTuyenSinh> ketQuaTuyenSinhList = new List<KetQuaTuyenSinh>();
+                            for (int i = 0; i < dsKetQuaTS.Length - 1; i++)
+                            {
+                                ketQuaTuyenSinhList.Add(dsKetQuaTS[i]);
+                            }
+
+                            // sap xep danh sach thi sinh
+                            // sort đối tượng theo cột họ và tên;
+                            WriteLine("Sap xep danh sach thi sinh theo họ tên");
+                            ketQuaTuyenSinhList.Sort((ketqua1, ketQua2) => ketqua1.GetThiSinh().GetHoVaTen().CompareTo(ketQua2.GetThiSinh().GetHoVaTen()));
+
+                            // in ket qua 2
+                            tableThiSinh = KetQuaTuyenSinh.XuatMang1D(ketQuaTuyenSinhList);
+                            tableThiSinh.Print();
 
                             WriteLine(arrMenu[arrMenu.Length - 2]);
                             ReadKey();
@@ -126,28 +160,6 @@ namespace KTLT2_TAODOITUONG
                         {
                             WriteLine(arrMenu[5]);
 
-                            WriteLine(arrMenu[arrMenu.Length - 2]);
-                            ReadKey();
-                            break;
-                        }
-                    case 7:
-                        {
-                            WriteLine(arrMenu[6]);
-
-                            WriteLine(arrMenu[arrMenu.Length - 2]);
-                            ReadKey();
-                            break;
-                        }
-                    case 8:
-                        {
-                            WriteLine(arrMenu[7]);
-                            WriteLine(arrMenu[arrMenu.Length - 2]);
-                            ReadKey();
-                            break;
-                        }
-                    case 9:
-                        {
-                            WriteLine(arrMenu[8]);
                             WriteLine(arrMenu[arrMenu.Length - 2]);
                             ReadKey();
                             break;
@@ -172,12 +184,7 @@ namespace KTLT2_TAODOITUONG
                 "Nhap/Xuat danh sach doi tuong tuyen sinh",
                 "Nhap/Xuat danh sach loai khoa",
                 "Nhap/xuat danh sach thi sinh",
-                "Nhap Danh Sach Thong Ke Ket qua Tuyen Sinh",
-                "Xuat ten khoa",
-                "Xuat ten doi tuong tuyen sinh",
-                "Xuat ten phong hoc",
-                "Xuat ket qua tong diem",
-                "Xuat Danh Sach Thong Ke Ket qua Tuyen Sinh",
+                "Nhap/Xuat Danh Sach Thong Ke Ket qua Tuyen Sinh",
                 "Sap xep bang tinh tang dan theo cot ho ten",
                 "Sap xep ma khoa, tong diem, ma khoa tang dan, tong diem giam dan",
                 "Press any key to continue.",

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using static System.Console;
 namespace KTLT2_TAODOITUONG.src.BangThongKeKetQuaTuyenSinh
@@ -68,6 +69,15 @@ namespace KTLT2_TAODOITUONG.src.BangThongKeKetQuaTuyenSinh
         {
             TablePrinter tableLoaiKhoa = new TablePrinter("So Bao danh", "Ho va ten", "Ngay Sinh", "Tong Diem");
             for (int i = 0; i < dsThiSinh.Length; i++)
+            {
+                tableLoaiKhoa.AddRow(dsThiSinh[i].soBaoDanh, dsThiSinh[i].hoVaTen, $"{dsThiSinh[i].ngaySinh:dd/MM/yyyy}", $"{dsThiSinh[i].tongDiem:0.0}");
+            }
+            return tableLoaiKhoa;
+        }
+        internal static TablePrinter XuatMang1D(List<ThiSinh> dsThiSinh)
+        {
+            TablePrinter tableLoaiKhoa = new TablePrinter("So Bao danh", "Ho va ten", "Ngay Sinh", "Tong Diem");
+            for (int i = 0; i < dsThiSinh.Count; i++)
             {
                 tableLoaiKhoa.AddRow(dsThiSinh[i].soBaoDanh, dsThiSinh[i].hoVaTen, $"{dsThiSinh[i].ngaySinh:dd/MM/yyyy}", $"{dsThiSinh[i].tongDiem:0.0}");
             }

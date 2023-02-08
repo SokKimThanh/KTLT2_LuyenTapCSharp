@@ -3,6 +3,7 @@
  * Lưu giữ kết quả thống kê của tất cả thí sinh được tuyển
  */
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using static System.Console;
 namespace KTLT2_TAODOITUONG.src.BangThongKeKetQuaTuyenSinh
@@ -89,7 +90,11 @@ namespace KTLT2_TAODOITUONG.src.BangThongKeKetQuaTuyenSinh
             DoiTuongTuyenSinh doiTuong = doiTuongs[r.Next(0, doiTuongs.Length)];
             return new KetQuaTuyenSinh(thiSinh, khoa, doiTuong, getPhongHoc(khoa), GetKetQua(khoa, thiSinh));
         }
-
+        /// <summary>
+        /// table format 2d array
+        /// </summary>
+        /// <param name="dsKetQuaTS"></param>
+        /// <returns></returns>
         internal static TablePrinter XuatMang1D(KetQuaTuyenSinh[] dsKetQuaTS)
         {
             string[] titles = { "So Bao danh", "Ho va ten", "Ngay sinh", "Ma Khoa", "Phong hoc", "Ten khoa", "Tong diem", "Ma doi tuong", "Ten doi tuong", "Diem chuan", "Ket qua" };
@@ -103,6 +108,36 @@ namespace KTLT2_TAODOITUONG.src.BangThongKeKetQuaTuyenSinh
                 tableThongKe.AddRow(thiSinh.GetSoBaoDanh(), thiSinh.GetHoVaTen(), thiSinh.GetNgaySinh(), khoa.GetMaKhoa(), ketqua.phongHoc, khoa.GetTenKhoa(), thiSinh.GetTongDiem(), doiTuong.GetMaDoiTuong(), doiTuong.GetTenDoiTuong(), khoa.GetDiemChuan(), ketqua.ketQua);
             }
             return tableThongKe;
+        }
+        /// <summary>
+        /// Table format collection type
+        /// </summary>
+        /// <param name="dsKetQuaTS"></param>
+        /// <returns></returns>
+        internal static TablePrinter XuatMang1D(List<KetQuaTuyenSinh> dsKetQuaTS)
+        {
+            string[] titles = { "So Bao danh", "Ho va ten", "Ngay sinh", "Ma Khoa", "Phong hoc", "Ten khoa", "Tong diem", "Ma doi tuong", "Ten doi tuong", "Diem chuan", "Ket qua" };
+            TablePrinter tableThongKe = new TablePrinter(titles);
+            for (int i = 0; i < dsKetQuaTS.Count; i++)
+            {
+                KetQuaTuyenSinh ketqua = dsKetQuaTS[i];
+                ThiSinh thiSinh = ketqua.thiSinh;
+                LoaiKhoa khoa = ketqua.khoa;
+                DoiTuongTuyenSinh doiTuong = ketqua.doiTuong;
+                tableThongKe.AddRow(thiSinh.GetSoBaoDanh(), thiSinh.GetHoVaTen(), thiSinh.GetNgaySinh(), khoa.GetMaKhoa(), ketqua.phongHoc, khoa.GetTenKhoa(), thiSinh.GetTongDiem(), doiTuong.GetMaDoiTuong(), doiTuong.GetTenDoiTuong(), khoa.GetDiemChuan(), ketqua.ketQua);
+            }
+            return tableThongKe;
+        }
+
+        internal ThiSinh GetThiSinh()
+        {
+            return thiSinh;
+        }
+        public static void Swap(ref KetQuaTuyenSinh kqMax, ref KetQuaTuyenSinh kqNext)
+        {
+            KetQuaTuyenSinh temp = kqMax;
+            kqMax = kqNext;
+            kqNext = temp;
         }
     }
 }

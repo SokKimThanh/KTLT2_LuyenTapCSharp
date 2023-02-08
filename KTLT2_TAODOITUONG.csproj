@@ -48,6 +48,7 @@
     <Compile Include="src\BangThongKeKetQuaTuyenSinh\LoaiKhoa.cs" />
     <Compile Include="src\BangThongKeKetQuaTuyenSinh\SubMenu_BangThongKeKetQuaTuyenSinh.cs" />
     <Compile Include="src\BangThongKeKetQuaTuyenSinh\ThiSinh.cs" />
+    <Compile Include="src\Helpers\TaoSoSanh.cs" />
     <Compile Include="src\SinhVien\BangDiem.cs" />
     <Compile Include="src\Book\B_Book.cs" />
     <Compile Include="src\Book\B_Statics.cs" />
