@@ -2,13 +2,11 @@
  * 6:49 5/2/2023 Sok Kim Thanh
  * Submenu bảng thống kê kết quả tuyển sinh
  */
-using KTLT2_TAODOITUONG.src.BangThongKeKetQuaTuyenSinh;
-using KTLT2_TAODOITUONG.src.Helpers;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using static System.Console;
+using System.Collections.Generic;
+using KTLT2_TAODOITUONG.src.BangThongKeKetQuaTuyenSinh;
+using System.Linq;
 namespace KTLT2_TAODOITUONG
 {
     class SubMenu_BangThongKeKetQuaTuyenSinh
@@ -25,6 +23,9 @@ namespace KTLT2_TAODOITUONG
             TablePrinter tableThongKe;
             TablePrinter tableThiSinh;
             TablePrinter tableDoiTuongTuyenSinh;
+            TablePrinter tableKetQuaTuyenSinh;
+            // khai bao
+            List<KetQuaTuyenSinh> ketQuaTuyenSinhList = new List<KetQuaTuyenSinh>();
             do
             {
                 Clear();
@@ -136,8 +137,7 @@ namespace KTLT2_TAODOITUONG
                             tableThongKe = KetQuaTuyenSinh.XuatMang1D(dsKetQuaTS);
                             tableThongKe.Print();
 
-                            // khai bao
-                            List<KetQuaTuyenSinh> ketQuaTuyenSinhList = new List<KetQuaTuyenSinh>();
+
                             for (int i = 0; i < dsKetQuaTS.Length - 1; i++)
                             {
                                 ketQuaTuyenSinhList.Add(dsKetQuaTS[i]);
@@ -149,17 +149,34 @@ namespace KTLT2_TAODOITUONG
                             ketQuaTuyenSinhList.Sort((ketqua1, ketQua2) => ketqua1.GetThiSinh().GetHoVaTen().CompareTo(ketQua2.GetThiSinh().GetHoVaTen()));
 
                             // in ket qua 2
-                            tableThiSinh = KetQuaTuyenSinh.XuatMang1D(ketQuaTuyenSinhList);
-                            tableThiSinh.Print();
+                            tableKetQuaTuyenSinh = KetQuaTuyenSinh.XuatMang1D(ketQuaTuyenSinhList);
+                            tableKetQuaTuyenSinh.Print();
 
                             WriteLine(arrMenu[arrMenu.Length - 2]);
                             ReadKey();
                             break;
                         }
-                    case 6:
+                    case 6:// sap xep theo ma khoa tăng dần, tổng điểm giảm dần
                         {
-                            WriteLine(arrMenu[5]);
+                            //Kiem tra danh sach sap xep
+                            if (ketQuaTuyenSinhList == null || ketQuaTuyenSinhList.Count == 0)
+                            {
+                                WriteLine("Vui long nhap danh sach ket qua tuyen sinh");
+                                WriteLine(arrMenu[arrMenu.Length - 2]);
+                                ReadKey();
+                                break;
+                            }
+                            // in ket qua 1
+                            tableKetQuaTuyenSinh = KetQuaTuyenSinh.XuatMang1D(ketQuaTuyenSinhList);
+                            tableKetQuaTuyenSinh.Print();
 
+                            WriteLine("In Ket qua sap xep ket qua tuyen sinh theo MaKhoa Tang dan, TongDiem Giam dan;");
+                            var ketquaQuery = from q in ketQuaTuyenSinhList
+                                              orderby q.GetThiSinh().GetTongDiem() descending, q.GetKhoa().GetMaKhoa()
+                                              select q;
+                            // in ket qua 2
+                            tableKetQuaTuyenSinh = KetQuaTuyenSinh.XuatMang1D(ketquaQuery.ToList());
+                            tableKetQuaTuyenSinh.Print();
                             WriteLine(arrMenu[arrMenu.Length - 2]);
                             ReadKey();
                             break;
