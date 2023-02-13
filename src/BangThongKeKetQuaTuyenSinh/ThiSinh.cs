@@ -7,8 +7,8 @@ namespace KTLT2_TAODOITUONG.src.BangThongKeKetQuaTuyenSinh
     class ThiSinh
     {
         // id:int dung cho csdl tu dong tang; Không hiển thị với người dùng
-        readonly int id;
-
+        private int ID;
+        private static List<ThiSinh> thiSinhList = null;
         private string soBaoDanh;
         private string hoVaTen;
         private DateTime ngaySinh;
@@ -44,8 +44,9 @@ namespace KTLT2_TAODOITUONG.src.BangThongKeKetQuaTuyenSinh
 
             // nhap tong diem
             tongDiem = d.Next(0, 25) + d.NextDouble();
-
-            return new ThiSinh(soBaoDanh, hoVaTen, ngaySinh, tongDiem);
+            ThiSinh ts = new ThiSinh(soBaoDanh, hoVaTen, ngaySinh, tongDiem);
+            ts.ID = GenerateID();
+            return ts;
         }
         /// <summary>
         /// Hàm nhập danh sách thí sinh
@@ -105,6 +106,24 @@ namespace KTLT2_TAODOITUONG.src.BangThongKeKetQuaTuyenSinh
         internal DateTime GetNgaySinh()
         {
             return ngaySinh;
+        }
+
+        static int GenerateID()
+        {
+            int max = 1;
+            if (thiSinhList != null && thiSinhList.Count > 0)
+            {
+                max = thiSinhList[0].ID;
+                foreach (ThiSinh sv in thiSinhList)
+                {
+                    if (max < sv.ID)
+                    {
+                        max = sv.ID;
+                    }
+                }
+                max++;
+            }
+            return max;
         }
     }
 }
