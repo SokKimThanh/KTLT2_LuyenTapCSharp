@@ -72,7 +72,7 @@ namespace KTLT2_TAODOITUONG
             }
             return bangDiem;
         }
-        public static List<SinhVien> NhapDSSinhVienList(int n)
+        public static List<SinhVien> NhapSinhVienList(int n)
         {
             List<SinhVien> bangDiem = new List<SinhVien>();
             for (int i = 0; i < n; i++)
