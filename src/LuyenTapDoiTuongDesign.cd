@@ -168,5 +168,12 @@
       <FileName>src\Hanghoa\HangHoa.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="KTLT2_TAODOITUONG.SubMenu_HangHoa">
+    <Position X="11.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>src\Hanghoa\SubMenu_HangHoa.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
