@@ -94,6 +94,15 @@ namespace KTLT2_TAODOITUONG
                             ReadKey();
                             break;
                         }
+                    case 7:
+                        {
+                            WriteLine(arrMenu[5]);
+                            SubMenu_HangHoa hangHoa = new SubMenu_HangHoa();
+                            hangHoa.GetSubmenu();
+                            WriteLine(arrMenu[arrMenu.Length - 2]);
+                            ReadKey();
+                            break;
+                        }
                     default:
                         {
                             if (n == -1)
@@ -112,12 +121,13 @@ namespace KTLT2_TAODOITUONG
         static void Main(string[] args)
         {
             string[] arrMenu = new string[] {
-                "Nhap/xuat Danh sach Sinh Vien",
+                "Nhap/xuat Danh sach Hang Hoa",
                 "Thao doc/ghi tu file thong tin sinh vien: ",
                 "In Thong tin sinh vien co diem trung binh tot nghiep lon nhat",
                 "Quan ly diem sach",
                 "Rap chieu phim",
                 "Bang thong ke ket qua tuyen sinh",
+                "Nhap/xuat Danh sach Sinh Vien",
                 "Connect database",
                 "Create table Sinh Vien",
                 "Create table Bang Diem",
