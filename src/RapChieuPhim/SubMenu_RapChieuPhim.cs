@@ -168,8 +168,10 @@ namespace KTLT2_TAODOITUONG.src.RapChieuPhim
                     case 9:// danh sách phim
                         {
                             WriteLine(arrMenu[8]);
-                            WriteLine("vui long nhap danh sach phim: ");
-                            Phim[] dsphim = Phim.NhapDanhSachPhim();
+                            WriteLine("Ban muon Tao ra bao nhieu phim vao danh sach phim? Tra loi: ");
+                            int jk = 0;
+                            int.TryParse(Console.ReadLine(), out jk);
+                            Phim[] dsphim = Phim.NhapDanhSachPhim(jk);
                             WriteLine("Danh sach phim dang chieu trong rap la: ");
                             Phim.XuatDanhSachPhim(dsphim);
                             ReadKey();

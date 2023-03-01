@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace KTLT2_TAODOITUONG.src.RapChieuPhim
@@ -100,14 +101,14 @@ namespace KTLT2_TAODOITUONG.src.RapChieuPhim
         /// </summary>
         public string Print()
         {
-            return $"{tenPhim}-{ngayPhatHanh}-{giaSanXuat}-{GiaVeGoc}";
+            return $"{tenPhim}-{ngayPhatHanh}-{giaSanXuat}-{GiaVeGoc:#}";
         }
 
         /// <summary>
         /// hàm random Nhảy 1 kí tự chữ cái viết hoa
         /// </summary>
         /// <param name="d">đối tượng random</param>
-        public string RDUpLetter(Random d)
+        public static string RDUpLetter(Random d)
         {
             string upperAlphabet = "QWERTYUIOPASDFGHJKLZXCVBNM";
             return upperAlphabet[(d.Next(0, upperAlphabet.Length))].ToString();
@@ -129,9 +130,10 @@ namespace KTLT2_TAODOITUONG.src.RapChieuPhim
             // ten phim 
             tenPhim = RDUpLetter(d) + RDUpLetter(d).ToLower();
             // ngay phat hanh
+            do
             {
                 ngayPhatHanhString = $"{d.Next(0, 30)}/{d.Next(0, 12)}/{d.Next(1900, 2024)}";
-            } while (!DateTime.TryParse(ngayPhatHanhString, out ngayPhatHanh)) ;
+            } while (!DateTime.TryParse(ngayPhatHanhString, out ngayPhatHanh));
             //  gia San Xuat
             giaSanXuat = d.NextDouble() + d.Next(100000, 999999);
             // gia ve goc
@@ -148,6 +150,7 @@ namespace KTLT2_TAODOITUONG.src.RapChieuPhim
             Phim[] danhSachPhim = new Phim[n];
             for (int i = 0; i < danhSachPhim.Length; i++)
             {
+                Thread.Sleep(TimeSpan.FromMilliseconds(20));
                 danhSachPhim[i] = NhapPhim();
             }
             return danhSachPhim;
@@ -160,7 +163,7 @@ namespace KTLT2_TAODOITUONG.src.RapChieuPhim
         {
             foreach (var a in arr)
             {
-                a.Print();
+                Console.WriteLine(a.Print());
             }
         }
     }
