@@ -1,5 +1,6 @@
 ﻿using KTLT2_TAODOITUONG.src.BTTH2._1;
 using KTLT2_TAODOITUONG.src.RapChieuPhim;
+using ThuatToan;
 using TIME;
 using static System.Console;
 namespace KTLT2_TAODOITUONG
@@ -72,6 +73,14 @@ namespace KTLT2_TAODOITUONG
                             ReadKey();
                             break;
                         }
+                    case 7:// Quan ly Tim Kiem Va sap xep
+                        {
+                            WriteLine(arrMenu[5]);
+                            SubMenu_TimKiemSapXep subMenu = new SubMenu_TimKiemSapXep();
+                            subMenu.GetSubMenu();
+                            ReadKey();
+                            break;
+                        }
                     default:
                         {
                             if (n == -1)
@@ -96,6 +105,7 @@ namespace KTLT2_TAODOITUONG
                 "Bang thong ke ket qua tuyen sinh",
                 "Chuong 2: Mot so kieu du lieu xay dung san trong c#(string)",
                 "Quan ly thoi gian",
+                "Quan ly Tim Kiem Va sap xep",
                 "Press any key to continue.",
                 "-1.Thoat chuong trinh",
             };
