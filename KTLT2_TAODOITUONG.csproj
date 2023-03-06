@@ -33,27 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EPPlus, Version=6.1.2.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
-      <HintPath>packages\EPPlus.6.1.2\lib\net462\EPPlus.dll</HintPath>
-    </Reference>
-    <Reference Include="EPPlus.Interfaces, Version=6.1.1.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
-      <HintPath>packages\EPPlus.Interfaces.6.1.1\lib\net462\EPPlus.Interfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="EPPlus.System.Drawing, Version=6.1.1.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
-      <HintPath>packages\EPPlus.System.Drawing.6.1.1\lib\net462\EPPlus.System.Drawing.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
-    </Reference>
-    <Reference Include="PresentationCore" />
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Security" />
-    <Reference Include="System.Threading.Tasks" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,19 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\Hanghoa\HangHoa.cs" />
     <Compile Include="src\BangThongKeKetQuaTuyenSinh\KetQuaTuyenSinh.cs" />
     <Compile Include="src\BangThongKeKetQuaTuyenSinh\DoiTuongTuyenSinh.cs" />
     <Compile Include="src\BangThongKeKetQuaTuyenSinh\LoaiKhoa.cs" />
     <Compile Include="src\BangThongKeKetQuaTuyenSinh\SubMenu_BangThongKeKetQuaTuyenSinh.cs" />
     <Compile Include="src\BangThongKeKetQuaTuyenSinh\ThiSinh.cs" />
-    <Compile Include="src\BTTH2.1\Main_BuildInString.cs" />
-    <Compile Include="src\BTTH2.1\BuildInString.cs" />
-    <Compile Include="src\BTTH2.1\SubMenu_btth21_BuildInTypeString.cs" />
-    <Compile Include="src\Database\ThanhVien.cs" />
-    <Compile Include="src\Helpers\TaoMenuMessage.cs" />
     <Compile Include="src\Helpers\TaoSoSanh.cs" />
-    <Compile Include="src\Helpers\TaoType.cs" />
-    <Compile Include="src\Ragnarok\XuatFileExcel.cs" />
+    <Compile Include="src\RapChieuPhim\Phim.cs" />
     <Compile Include="src\SinhVien\BangDiem.cs" />
     <Compile Include="src\Book\B_Book.cs" />
     <Compile Include="src\Book\B_Statics.cs" />
@@ -90,19 +66,15 @@
     <Compile Include="src\RapChieuPhim\RapChieuPhim.cs" />
     <Compile Include="src\SinhVien\SinhVien.cs" />
     <Compile Include="src\Helpers\TaoRandom.cs" />
-    <Compile Include="src\MainMenu.cs" />
+    <Compile Include="src\MainMenu_SinhVien.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\Helpers\TablePrinter.cs" />
-    <Compile Include="src\SinhVien\SubMenu_SinhVien.cs" />
+    <Compile Include="src\Hanghoa\SubMenu_HangHoa.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
+    <None Include="src\LuyenTapDoiTuongDesign.cd" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="src\Ragnarok\CheckLuuSoLanThamGia\" />
-    <Folder Include="src\Ragnarok\QuanLyThanhVien\" />
-    <Folder Include="src\Ragnarok\ThongKeDiPhoBanTrongTuan\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
