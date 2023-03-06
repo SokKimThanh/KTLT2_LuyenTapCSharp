@@ -89,6 +89,7 @@
     <Compile Include="src\RapChieuPhim\MaGhe.cs" />
     <Compile Include="src\RapChieuPhim\SubMenu_RapChieuPhim.cs" />
     <Compile Include="src\RapChieuPhim\RapChieuPhim.cs" />
+    <Compile Include="src\SinhVien\SinhVienOOP.cs" />
     <Compile Include="src\SinhVien\SinhVien.cs" />
     <Compile Include="src\Helpers\TaoRandom.cs" />
     <Compile Include="src\MainMenu.cs" />

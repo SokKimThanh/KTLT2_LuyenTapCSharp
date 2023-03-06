@@ -82,7 +82,14 @@ namespace KTLT2_TAODOITUONG
 
                             break;
                         }
-
+                    case 4: // xay dung lop huong doi tuong sinh vien
+                        {
+                            WriteLine(arrMenu[2]);
+                            this.GetSubMenuSinhVienOOP();
+                            WriteLine(arrMenu[arrMenu.Length - 2]);
+                            ReadKey();
+                            break;
+                        }
                     default:
                         {
                             if (n == -1)
@@ -115,6 +122,10 @@ namespace KTLT2_TAODOITUONG
             TablePrinter tableSubMenu = new TablePrinter(titles);
             tableSubMenu.NhapMenu(submenu);
             ShowSubmenu(tableSubMenu, submenu);
+        }
+        internal void GetSubMenuSinhVienOOP()
+        {
+            // viet code sub menu cho sinh vien xay dung lop huong doi tuong
         }
     }
 }

@@ -9,7 +9,7 @@ namespace KTLT2_TAODOITUONG
     {
         public static char TaoKiTuChuThuong()
         {
-            string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            string chars = "abcdefghijklmnopqrstuvwxyz";
             Random rand = new Random();
             int num = rand.Next(0, chars.Length);
             return chars[num];
@@ -26,7 +26,7 @@ namespace KTLT2_TAODOITUONG
         {
             string chars = "0123456789";
             Random rand = new Random();
-            int num = rand.Next(0, chars.Length);
+            int num = rand.Next(0, 9);
             return chars[num];
         }
         public static string TaoNgaySinhTuDongString()
@@ -127,6 +127,17 @@ namespace KTLT2_TAODOITUONG
             donGia = aNumberAsString;
             WriteLine($"Nhap don gia hang hoa: {donGia}");
 
+        }
+        /// <summary>
+        /// Random năm sinh
+        /// </summary>
+        public int RandomTuoi()
+        {
+            Random d = new Random();
+
+            DateTime now = DateTime.Now;
+            int ngay = d.Next(1900, now.Year);
+            return now.Year - ngay;
         }
     }
 }
