@@ -4,7 +4,6 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using static System.Console;
 namespace KTLT2_TAODOITUONG.src.BangThongKeKetQuaTuyenSinh
@@ -129,27 +128,10 @@ namespace KTLT2_TAODOITUONG.src.BangThongKeKetQuaTuyenSinh
             }
             return tableThongKe;
         }
-        /// <summary>
-        /// Table format linq 
-        /// </summary>
-        /// <param name="dsKetQuaTS"></param>
-        /// <returns></returns>
-        internal static TablePrinter XuatMang1D(IEnumerable<KetQuaTuyenSinh> dsKetQuaTS)
-        {
-            return XuatMang1D(dsKetQuaTS.ToList());
-        }
 
         internal ThiSinh GetThiSinh()
         {
             return thiSinh;
-        }
-        internal LoaiKhoa GetKhoa()
-        {
-            return khoa;
-        }
-        internal DoiTuongTuyenSinh GetDoiTuongTuyenSinh()
-        {
-            return doiTuong;
         }
         public static void Swap(ref KetQuaTuyenSinh kqMax, ref KetQuaTuyenSinh kqNext)
         {

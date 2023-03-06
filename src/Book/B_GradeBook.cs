@@ -30,44 +30,17 @@ namespace KTLT2_TAODOITUONG
         public void Main()
         {
             Random n = new Random();
-            //WriteLine($"Vui long nhap K so can so sanh: ");
-            //int.TryParse(ReadLine(), out int k);
+            WriteLine($"Vui long nhap K so can so sanh: ");
+            int.TryParse(ReadLine(), out int k);
             B_Book book1 = NhapBook();
-            //for (int i = 0; i < k; i++)
-            //{
-            //    book1.AddGrade(n.NextDouble());
-            //}
-            while (true)
+            for (int i = 0; i < k; i++)
             {
-                WriteLine("Vui Long nhap diem hoac 'end' de ket thuc.");
-                var input = ReadLine();
-                if (input == "end")
-                {
-                    break;
-                }
-
-                try
-                {
-                    var grade = double.Parse(input);
-                    book1.AddGrade(grade);
-                }
-                catch (ArgumentException ex)
-                {
-                    WriteLine(ex.Message);
-                }
-                catch (FormatException ex)
-                {
-                    WriteLine(ex.Message);
-                }
-                finally
-                {
-                    WriteLine("**");
-                }
+                book1.AddGrade(n.NextDouble());
             }
             // lay danh sach diem cua doi tuong book1(co encapsulation: bao mat)
             XuatMang(book1.GetGrade());
             B_Statics s = book1.ShowStatics();
-            WriteLine(s.ToPrint());
+            Write(s.ToPrint());
         }
     }
 }

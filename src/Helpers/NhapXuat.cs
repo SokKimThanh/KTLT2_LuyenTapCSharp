@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using static System.Console;
 namespace KTLT2_TAODOITUONG
 {
@@ -11,14 +9,6 @@ namespace KTLT2_TAODOITUONG
             for (int i = 0; i < arr.Length; i++)
             {
                 Write(arr[i] + "\t");
-            }
-            WriteLine();
-        }
-        public void XuatMang1D(IEnumerable<double> arr)
-        {
-            for (int i = 0; i < arr.Count(); i++)
-            {
-                Write(arr + "\t");
             }
             WriteLine();
         }

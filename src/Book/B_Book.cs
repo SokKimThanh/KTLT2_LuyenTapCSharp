@@ -18,14 +18,7 @@ namespace KTLT2_TAODOITUONG
         /// <param name="grade"></param>
         public void AddGrade(double grade)// no encapsulation 
         {
-            if (grade >= 0 && grade <= 100)
-            {
-                grades.Add(grade);
-            }
-            else
-            {
-                throw new ArgumentException($"{nameof(grade)}");
-            }
+            grades.Add(grade);
         }
         public List<double> GetGrade()
         {
