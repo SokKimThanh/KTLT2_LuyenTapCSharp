@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using static System.Console;
 namespace TIME
 {
-    class Timetest
+    class SubMenu_Time
     {
-        static void Main(string[] args)
+        internal void GetSubMenu()
         {
 
             Time t1 = new Time(2, 10, 15);

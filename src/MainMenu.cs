@@ -1,5 +1,6 @@
 ﻿using KTLT2_TAODOITUONG.src.BTTH2._1;
 using KTLT2_TAODOITUONG.src.RapChieuPhim;
+using TIME;
 using static System.Console;
 namespace KTLT2_TAODOITUONG
 {
@@ -63,6 +64,14 @@ namespace KTLT2_TAODOITUONG
                             ReadKey();
                             break;
                         }
+                    case 6:// Quan ly thoi gian
+                        {
+                            WriteLine(arrMenu[5]);
+                            SubMenu_Time subMenu = new SubMenu_Time();
+                            subMenu.GetSubMenu();
+                            ReadKey();
+                            break;
+                        }
                     default:
                         {
                             if (n == -1)
@@ -86,7 +95,7 @@ namespace KTLT2_TAODOITUONG
                 "Rap chieu phim",
                 "Bang thong ke ket qua tuyen sinh",
                 "Chuong 2: Mot so kieu du lieu xay dung san trong c#(string)",
-                "Connect database",
+                "Quan ly thoi gian",
                 "Press any key to continue.",
                 "-1.Thoat chuong trinh",
             };
