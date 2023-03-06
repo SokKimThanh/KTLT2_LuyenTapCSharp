@@ -41,8 +41,9 @@ namespace KTLT2_TAODOITUONG
                         {
                             WriteLine(arrMenu[0]);
                             WriteLine("Vui long nhap so luong sinh vien muon luu diem");
-                            int.TryParse(ReadLine(), out int k);
-                            arrSinhVien = NhapXuatSinhVien.NhapSinhVienList(k);
+                            int k;
+                            int.TryParse(ReadLine(), out k);
+                            arrSinhVien = NhapXuatSinhVien.NhapDSSinhVienList(k);
                             NhapXuatSinhVien.XuatMang1D(arrSinhVien, ref tableSinhVien);
                             tableSinhVien.Print();
                             WriteLine(arrMenu[arrMenu.Length - 2]);

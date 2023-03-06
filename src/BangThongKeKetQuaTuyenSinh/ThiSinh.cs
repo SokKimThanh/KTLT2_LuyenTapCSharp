@@ -7,7 +7,7 @@ namespace KTLT2_TAODOITUONG.src.BangThongKeKetQuaTuyenSinh
     class ThiSinh
     {
         // id:int dung cho csdl tu dong tang; Không hiển thị với người dùng
-        readonly int id;
+        //readonly int id;
 
         private string soBaoDanh;
         private string hoVaTen;

@@ -74,6 +74,8 @@
     <Compile Include="src\Database\ThanhVien.cs" />
     <Compile Include="src\Helpers\TaoMenuMessage.cs" />
     <Compile Include="src\Helpers\TaoSoSanh.cs" />
+    <Compile Include="src\Helpers\TaoType.cs" />
+    <Compile Include="src\RapChieuPhim\Phim.cs" />
     <Compile Include="src\SinhVien\BangDiem.cs" />
     <Compile Include="src\Book\B_Book.cs" />
     <Compile Include="src\Book\B_Statics.cs" />
@@ -92,9 +94,11 @@
     <Compile Include="src\MainMenu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\Helpers\TablePrinter.cs" />
+    <Compile Include="src\SinhVien\SubMenu_SinhVien.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="src\LuyenTapDoiTuongDesign.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
