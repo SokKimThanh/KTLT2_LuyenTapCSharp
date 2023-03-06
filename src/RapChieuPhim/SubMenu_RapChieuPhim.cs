@@ -165,6 +165,18 @@ namespace KTLT2_TAODOITUONG.src.RapChieuPhim
                             ReadKey();
                             break;
                         }
+                    case 9:// danh sách phim
+                        {
+                            WriteLine(arrMenu[8]);
+                            WriteLine("Ban muon Tao ra bao nhieu phim vao danh sach phim? Tra loi: ");
+                            int jk = 0;
+                            int.TryParse(Console.ReadLine(), out jk);
+                            Phim[] dsphim = Phim.NhapDanhSachPhim(jk);
+                            WriteLine("Danh sach phim dang chieu trong rap la: ");
+                            Phim.XuatDanhSachPhim(dsphim);
+                            ReadKey();
+                            break;
+                        }
                     default:
                         break;
                 }
@@ -184,6 +196,7 @@ namespace KTLT2_TAODOITUONG.src.RapChieuPhim
                 "Tim Hang co nhieu ghe trong nhat",
                 "Tim hang da het cho trong",
                 "Kiem tra tat ca cac ghe o ngoai bien duoc dat het hay chua",
+                "danh sach phim co trong rap",
                 "Press any key to continous.",
                 "-1.Tro ve",
             };
