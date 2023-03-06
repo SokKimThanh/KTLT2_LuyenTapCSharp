@@ -96,6 +96,7 @@
     <Compile Include="src\Helpers\TablePrinter.cs" />
     <Compile Include="src\SinhVien\SubMenu_SinhVien.cs" />
     <Compile Include="src\Time\Time.cs" />
+    <Compile Include="src\Time\Timetest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
