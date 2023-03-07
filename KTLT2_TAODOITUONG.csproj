@@ -76,6 +76,9 @@
     <Compile Include="src\Helpers\TaoSoSanh.cs" />
     <Compile Include="src\Helpers\TaoType.cs" />
     <Compile Include="src\RapChieuPhim\Phim.cs" />
+    <Compile Include="src\Sach\SubMenu_Sach.cs" />
+    <Compile Include="src\Sach\Sach.cs" />
+    <Compile Include="src\Sach\SupportClass.cs" />
     <Compile Include="src\SinhVien\BangDiem.cs" />
     <Compile Include="src\Book\B_Book.cs" />
     <Compile Include="src\Book\B_Statics.cs" />

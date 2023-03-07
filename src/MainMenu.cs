@@ -1,6 +1,5 @@
 ﻿using KTLT2_TAODOITUONG.src.BTTH2._1;
 using KTLT2_TAODOITUONG.src.RapChieuPhim;
-using ThuatToan;
 using TIME;
 using static System.Console;
 namespace KTLT2_TAODOITUONG
@@ -33,8 +32,8 @@ namespace KTLT2_TAODOITUONG
                     case 2:// chuong trinh nhap diem 
                         {
                             WriteLine(arrMenu[1]);
-                            B_GradeBook gradeBook = new B_GradeBook();
-                            gradeBook.Main();
+                            SubMenu_Sach gradeBook = new SubMenu_Sach();
+                            gradeBook.GetSubMenu();
                             WriteLine(arrMenu[arrMenu.Length - 2]);
                             ReadKey();
                             break;
@@ -75,7 +74,7 @@ namespace KTLT2_TAODOITUONG
                         }
                     case 7:// Quan ly Tim Kiem Va sap xep
                         {
-                            WriteLine(arrMenu[5]);
+                            WriteLine(arrMenu[6]);
                             SubMenu_TimKiemSapXep subMenu = new SubMenu_TimKiemSapXep();
                             subMenu.GetSubMenu();
                             ReadKey();
