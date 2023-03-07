@@ -5,7 +5,7 @@ using System.Text;
 using static System.Console;
 namespace KTLT2_TAODOITUONG
 {
-    public class SinhVien2
+    public class SinhVienOOP
     {
         /// <summary>
         /// họ tên sinh vien
