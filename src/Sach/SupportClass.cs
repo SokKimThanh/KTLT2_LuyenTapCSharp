@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace KTLT2_TAODOITUONG
 {
@@ -9,7 +10,7 @@ namespace KTLT2_TAODOITUONG
         {
             for (int i = 0; i < arr.Length; i++)
             {
-                if (arr[i].TenSach == key)
+                if (arr[i].TenSach.ToLower().Contains(key.ToLower()))
                 {
                     return i;
                 }
@@ -32,16 +33,16 @@ namespace KTLT2_TAODOITUONG
             return arrNew;
         }
         // Giai thuat xoa tat ca vi tri
-        public static void LinearSeachDeleteAll(ref Sach[] arr, string key)
+        public static void LinearSeachDeleteAll(ref Sach[] arr, string maSach)
         {
             // cap du mang  
-            for (int i = 0; i < arr.Length; i++)
+            for (int i = 0; i < arr.Length;)
             {
-                if (arr[i].MaSach == key)
+                if (arr[i].MaSach.ToLower() == maSach.ToLower())
                 {
                     for (int j = i; j < arr.Length - 1; j++)
                     {
-                        arr[j++] = arr[i];
+                        arr[j] = arr[j + 1];
                     }
                     Array.Resize(ref arr, arr.Length - 1);
                 }
@@ -51,6 +52,29 @@ namespace KTLT2_TAODOITUONG
                 }
             }
         }
-
+        /// <summary>
+        /// Tìm sách theo thuật toán binary seach
+        /// </summary>
+        /// <param name="arr">Danh sach doi tuong</param>
+        /// <param name="maSach">Ma sach</param>
+        /// <returns></returns>
+        public static int BinarySearch(Sach[] arr, string maSach)
+        {
+            // xuat ket qua
+            int location = -1;
+            int left = 0;
+            int mid = -1;
+            int right = arr.Length - 1;
+            while (left <= right)
+            {
+                mid = (left + right) / 2;
+                if (arr[mid].MaSach.ToLower().Contains(maSach.ToLower()))
+                    location = mid;
+                else if (arr[mid].MaSach.ToLower().CompareTo(maSach.ToLower()) > 0)
+                    left = mid + 1;
+                else right = mid - 1;
+            }
+            return location;
+        }
     }
 }

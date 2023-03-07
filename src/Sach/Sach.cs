@@ -10,6 +10,7 @@ namespace KTLT2_TAODOITUONG
     {
         private string maSach, tenSach;
         private int gia, namSX;
+        static Random d = new Random();
 
         public string MaSach { get => maSach; set => maSach = value; }
         public string TenSach { get => tenSach; set => tenSach = value; }
@@ -24,8 +25,9 @@ namespace KTLT2_TAODOITUONG
             // nhap ma sach
             do
             {
-                Console.Write("Vui long nhap ma sach: ");
-                maSach = Console.ReadLine();
+                //Console.Write("Vui long nhap ma sach: ");
+                //maSach = Console.ReadLine();
+                maSach = $"{TaoRandom.TaoKiTuChuHoa()}{TaoRandom.TaoKiTuChuThuong()}{TaoRandom.TaoKiTuSo()}";
                 if (maSach.Length > 6)
                 {
                     Console.WriteLine("Ma sach chi duoc nhap toi da 6 ky tu");
@@ -35,8 +37,9 @@ namespace KTLT2_TAODOITUONG
             // nhap ten sach
             do
             {
-                Console.Write("Vui long nhap ten sach: ");
-                tenSach = Console.ReadLine();
+                //Console.Write("Vui long nhap ten sach: ");
+                //tenSach = Console.ReadLine();
+                tenSach = $"{maSach} - {TaoRandom.TaoKiTuChuHoa()}{TaoRandom.TaoKiTuChuThuong()}";
                 if (tenSach.Length > 30)
                 {
                     Console.WriteLine("Ten sach chi duoc nhap toi da 30 ky tu");
@@ -44,22 +47,24 @@ namespace KTLT2_TAODOITUONG
             } while (tenSach.Length > 30 || tenSach.Length <= 0);
 
             // nhap gia
-             
-            do
-            {
-                Console.Write("Vui long nhap gia: ");
-            } while (!int.TryParse(Console.ReadLine(), out gia));
 
-           
+            gia = d.Next();
+            //do
+            //{
+            //    Console.Write("Vui long nhap gia: ");
+            //} while (!int.TryParse(Console.ReadLine(), out gia));
+
+
             // nhap nam
-            do
-            {
-                Console.Write("vui long nhap nam san xuat: "); 
-                if (namSX < 1900)
-                {
-                    Console.WriteLine("Nam san xuat phai lon 1900");
-                }
-            } while (!int.TryParse(Console.ReadLine(), out namSX) || namSX > 1900);
+            namSX = d.Next(1900, DateTime.Now.Year);
+            //do
+            //{
+            //    Console.Write("vui long nhap nam san xuat: ");
+            //    if (namSX < 1900)
+            //    {
+            //        Console.WriteLine("Nam san xuat phai lon 1900");
+            //    }
+            //} while (!int.TryParse(Console.ReadLine(), out namSX) || namSX < 1900);
 
         }
         public void Xuat()
