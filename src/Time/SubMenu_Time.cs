@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Console;
 namespace KTLT2_TAODOITUONG
 {
     class SubMenu_Time
@@ -12,17 +7,17 @@ namespace KTLT2_TAODOITUONG
         {
             Time time = new Time();
             time.Nhap();
-            // ket qua nhap
-            string ketQua = time.Xuat();
-            Console.WriteLine(ketQua);
+            // giay hien tai
+            string giayHienTai = time.Xuat();
+            Console.WriteLine(giayHienTai);
             // giay ke tiep
             Time nextSecond = time.nextSecond();
-            ketQua = nextSecond.Xuat();
-            Console.WriteLine(ketQua);
+            giayHienTai = nextSecond.Xuat();
+            Console.WriteLine(giayHienTai);
             // giay truoc do
             Time previousSecond = time.previousSecond();
-            ketQua = previousSecond.Xuat();
-            Console.WriteLine(ketQua);
+            giayHienTai = previousSecond.Xuat();
+            Console.WriteLine(giayHienTai);
             Console.ReadKey();
         }
     }

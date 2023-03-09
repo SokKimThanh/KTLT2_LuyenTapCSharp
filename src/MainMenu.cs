@@ -1,6 +1,5 @@
 ﻿using KTLT2_TAODOITUONG.src.BTTH2._1;
-using KTLT2_TAODOITUONG.src.RapChieuPhim;
-using TIME;
+using KTLT2_TAODOITUONG.src.RapChieuPhim; 
 using static System.Console;
 namespace KTLT2_TAODOITUONG
 {
