@@ -1,125 +1,164 @@
-﻿///author: Hoang Van Dung.
-///ID:22211TT0043.
-///date:02/03/2023.
-///Class: CD22TT1.
-///Subject: OOP.
-///class: Time.
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TIME
+namespace KTLT2_TAODOITUONG
 {
-    class Time
+    internal class Time
     {
-        // field
-        private int _Gio;
-        private int _Phut;
-        private int _Giay;
+        private int hour;
+        private int minute;
+        private int second;
 
-        public int Gio
+        public int Hour
         {
-            get
-            {
-                return _Gio;
-            }
-
+            get { return hour; }
             set
             {
-                _Gio = value;
+                if (hour > 23 || hour < 0)
+                {
+                    hour = 0;
+                }
+                hour = value;
             }
         }
 
-        public int Phut
+        public int Minute
         {
-            get
-            {
-                return _Phut;
-            }
-
+            get { return minute; }
             set
             {
-                _Phut = value;
+                if (minute > 59 || minute < 0)
+                {
+                    minute = 0;
+                }
+                minute = value;
+            }
+        }
+        public int Second
+        {
+            get { return second; }
+            set
+            {
+                if (second > 59 || second < 0)
+                {
+                    second = 0;
+                }
+                second = value;
             }
         }
 
-        public int Giay
-        {
-            get
-            {
-                return _Giay;
-            }
+        /// <summary>
+        /// Ham huy
+        /// </summary>
+        ~Time() { }
 
-            set
-            {
-                _Giay = value;
-            }
-        }
-        // method
-        // phuong thuc khoi tao
         public Time()
         {
-            this._Gio = 0;
-            this._Phut = 0;
-            this._Giay = 0;
+            hour = 0;
+            minute = 0;
+            second = 0;
         }
-        public Time(int Gio, int Phut, int Giay)
+        /// <summary>
+        /// Ham Khoi tao
+        /// </summary>
+        /// <param name="hour"></param>
+        /// <param name="minute"></param>
+        /// <param name="second"></param>
+        public Time(int hour, int minute, int second)
         {
+            this.hour = hour;
+            this.minute = minute;
+            this.second = second;
+        }
+        public string Xuat()
+        {
+            return $"{Hour:00}:{Minute:00}:{Second:00}";
+        }
 
-            if (Gio >= 0 && Gio <= 24)
+        public Time nextSecond()
+        {
+            // xu ly node tang len 1 giay
+            int hour = Hour;
+            int minute = Minute;
+            int second = Second;
+            second++;
+            if (second >= 59)
             {
-                this.Gio = Gio;
+                second = 0;
+                minute++;
             }
-            if (Phut >= 0 && Phut <= 60)
+            if (minute >= 59)
             {
-                this.Phut = Phut;
+                minute = 0;
+                hour++;
             }
-            if (Giay >= 0 && Giay <= 60)
+            if (hour >= 23)
             {
-                this.Giay = Giay;
+                hour = 0;
             }
 
+            return new Time(hour, minute, second);
         }
-        public string toString()
-        {
-            return ($"{this._Gio}h: {this._Phut}m: {this._Giay}s");
-        }
-        // cong them gio
-        public Time AddGio(Time t)
-        {
-            Time kq = new Time();
-            int totalSec = (this._Gio + t.Gio) * 3600 + (this.Phut + t.Phut) * 60 + this.Giay + t.Giay; 
-            kq._Gio = totalSec / 3600;
-            kq.Phut = (totalSec % 3600) / 60;
-            kq.Giay = (totalSec % 360) % 60;
-            return kq;
-        }
-        // cong them giay
-        public Time AddGiay(int sec)
-        {
-            Time kq = new Time();
-            int totalSec = this._Gio*3600 + this._Phut*60 + this._Giay + sec;
-            kq._Gio = totalSec / 3600;
 
-            kq._Phut = (totalSec % 3600) / 60;
-
-            kq._Giay = (totalSec % 3600) % 60;
-            return kq;
-        }
-        // tru theo thoi gian nhap vao
-        public Time AbTraTime(Time t)
+        public Time previousSecond()
         {
-            Time kq = new Time();
-            int totalSec = this._Gio * 3600 + this._Phut * 60 + this._Giay;
-            int totalSecT = t.Gio * 3600 + t.Phut * 60 + t.Giay;
-            int timeLast = totalSec - totalSecT;
-            kq._Gio = timeLast /3600;
-            kq._Phut = timeLast % 3600 / 60;
-            kq._Giay = timeLast % 3600 % 60;
-            return kq;
+            // xu ly node giam xuong 1 giay
+            int hour = Hour;
+            int minute = Minute;
+            int second = Second;
+            second--;
+            if (second < 0)
+            {
+                second = 59;
+                minute--;
+            }
+            if (minute < 0)
+            {
+                minute = 59;
+                hour--;
+            }
+            if (hour < 0)
+            {
+                hour = 0;
+            }
+
+            return new Time(hour, minute, second);
+        }
+        public void setHour(int hour)
+        {
+            this.Hour = hour;
+        }
+        public void setTime(int hour, int minute, int second)
+        {
+            this.Hour = hour;
+            this.Minute = minute;
+            this.Second = second;
+        }
+        public void Nhap()
+        {
+            int hour;
+            int minute;
+            int second;
+            // nhap gio 
+            do
+            {
+                Console.Write("Vui long nhap gio: ");
+            } while (!int.TryParse(Console.ReadLine(), out hour) || hour > 23 || hour < 0);
+
+            do
+            {
+                Console.Write("Vui long nhap phut: ");
+            } while (!int.TryParse(Console.ReadLine(), out minute) || minute > 59 || minute < 0);
+
+            do
+            {
+                Console.Write("Vui long nhap giay: ");
+            } while (!int.TryParse(Console.ReadLine(), out second) || second > 59 || second < 0);
+
+            this.setTime(hour, minute, second);
         }
     }
 }
