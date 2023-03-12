@@ -57,15 +57,7 @@ namespace KTLT2_TAODOITUONG.src.Author
             set
             {
                 gender = value;
-                if ((gender.ToString().CompareTo("f") != 0))
-                {
-                    gender = 'u';
-                }
-                if ((gender.ToString().CompareTo("m") != 0))
-                {
-                    gender = 'u';
-                }
-                if ((gender.ToString().CompareTo("u") != 0))
+                if (gender.ToString() != "f" || gender.ToString() != "m" || gender.ToString() != "u")
                 {
                     gender = 'u';
                 }
@@ -90,12 +82,13 @@ namespace KTLT2_TAODOITUONG.src.Author
         }
         public void Print()
         {
-            Console.WriteLine($"{name}({gender}) at {email}");
+            string genderString = this.gender == 'f' ? "female" : this.gender == 'm' ? "male" : "unknow";
+            Console.WriteLine($"{name}({genderString}) at {email}");
         }
 
         public void Nhap()
         {
-            char gender;
+
             // Nhap ten tac gia
             do
             {
@@ -109,12 +102,15 @@ namespace KTLT2_TAODOITUONG.src.Author
                 this.setEmail(Console.ReadLine());
             } while (this.email == "-1");
             // nhap gender
+            bool check = false;
+            char gender;
             do
             {
                 Console.Write("Vui long nhap gender: ");
-            } while (char.TryParse(Console.ReadLine(), out gender));
+                check = char.TryParse(Console.ReadLine(), out gender);
+                this.Gender = gender;
+            } while (this.gender.ToString().Length <= 0 || this.gender.ToString().Length > 1);
 
-            this.Gender = gender;
         }
     }
 }
