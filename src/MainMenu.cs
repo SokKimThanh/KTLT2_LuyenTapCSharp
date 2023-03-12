@@ -1,5 +1,6 @@
-﻿using KTLT2_TAODOITUONG.src.BTTH2._1;
-using KTLT2_TAODOITUONG.src.RapChieuPhim; 
+﻿using KTLT2_TAODOITUONG.src.Author;
+using KTLT2_TAODOITUONG.src.BTTH2._1;
+using KTLT2_TAODOITUONG.src.RapChieuPhim;
 using static System.Console;
 namespace KTLT2_TAODOITUONG
 {
@@ -79,6 +80,14 @@ namespace KTLT2_TAODOITUONG
                             ReadKey();
                             break;
                         }
+                    case 8:// Quan ly author
+                        {
+                            WriteLine(arrMenu[7]);
+                            Submenu_Author subMenu = new Submenu_Author();
+                            subMenu.GetSubMenu();
+                            ReadKey();
+                            break;
+                        }
                     default:
                         {
                             if (n == -1)
@@ -98,12 +107,13 @@ namespace KTLT2_TAODOITUONG
         {
             string[] arrMenu = new string[] {
                 "Quan ly sinh vien",
-                "Quan ly diem sach",
+                "Quan ly sach",
                 "Rap chieu phim",
                 "Bang thong ke ket qua tuyen sinh",
                 "Chuong 2: Mot so kieu du lieu xay dung san trong c#(string)",
                 "Quan ly thoi gian",
                 "Quan ly Tim Kiem Va sap xep",
+                "Quan ly Tac gia",
                 "Press any key to continue.",
                 "-1.Thoat chuong trinh",
             };
