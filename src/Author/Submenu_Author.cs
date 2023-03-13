@@ -32,7 +32,7 @@ namespace KTLT2_TAODOITUONG.src.Author
             Console.WriteLine(sum);
             // tim kiem 
             Console.WriteLine("Tim kiem");
-            string ten = NhapTen();
+            string ten = NhapChuoi();
             Console.WriteLine("Ket qua: ");
             Array.Sort(authors);
             int index = Search.TimKiemNhiPhan(authors, ten);
@@ -57,15 +57,15 @@ namespace KTLT2_TAODOITUONG.src.Author
             } while (!int.TryParse(Console.ReadLine(), out n) || n <= 0 || n >= 10);
             return n;
         }
-        public string NhapTen()
+        public string NhapChuoi()
         {
-            string n;
+            string s;
             do
             {
                 Console.Write("Nhap ten: ");
-                n = Console.ReadLine();
-            } while (n == null);
-            return n;
+                s = Console.ReadLine();
+            } while (s == null);
+            return s;
         }
         public Author[] NhapDanhSach(int n)
         {

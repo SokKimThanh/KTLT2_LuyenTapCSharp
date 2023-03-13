@@ -90,6 +90,14 @@ namespace KTLT2_TAODOITUONG
                 AddRow(i, arr[i]);
             }
         }
+
+        public void NhapMenuStarIndex(string[] arr, int startIndex)
+        {
+            for (int i = startIndex; i < arr.Length; i++)
+            {
+                AddRow(i, arr[i]);
+            }
+        }
         public void NhapMenu(string[] arr)
         {
             for (int i = 0; i < arr.Length; i++)
