@@ -2,12 +2,13 @@
 using KTLT2_TAODOITUONG.src.BTTH2._1;
 using KTLT2_TAODOITUONG.src.RapChieuPhim;
 using KTLT2_TAODOITUONG.src.TimKiemSapXep;
+using System;
 using static System.Console;
 namespace KTLT2_TAODOITUONG
 {
     class MainMenu
     {
-        public static void ShowMainMenu(string[] arrMenu, TablePrinter tableMenu)
+        public static void ShowMainMenu(DanhSachMenu arrMenu)
         {
             int n;
             do
@@ -15,52 +16,55 @@ namespace KTLT2_TAODOITUONG
                 Clear();
                 // tao menu chuong trinh 
                 WriteLine("Chuong trinh quan ly thong tin tong hop");
-                tableMenu.Print();
+                arrMenu.ShowAllMenu();
                 // nhap lenh
                 Write($"Vui long nhap command hoac '-1' de ket thuc chuong trinh: ");
                 int.TryParse(ReadLine(), out n);
-                WriteLine(arrMenu[n]);
+                try
+                {
+                    WriteLine(arrMenu.ShowMenuBySTT(n).toString());
+                }
+                catch (Exception ex)
+                {
+                    WriteLine(ex.Message);
+                }
                 switch (n)
                 {
                     case 1: // Chuong trinh quan ly sinh vien
                         {
-                           
+
                             SubMenu_SinhVien submenu = new SubMenu_SinhVien();
                             submenu.GetSubMenu();
-                            WriteLine(arrMenu[arrMenu.Length - 2]);
                             ReadKey();
                             break;
                         }
                     case 2:// chuong trinh nhap diem 
                         {
-                         
+
                             SubMenu_Sach gradeBook = new SubMenu_Sach();
                             gradeBook.GetSubMenu();
-                            WriteLine(arrMenu[arrMenu.Length - 2]);
                             ReadKey();
                             break;
                         }
                     case 3: // rap chieu phim 
                         {
-                          
+
                             SubMenu_RapChieuPhim rapChieuPhim = new SubMenu_RapChieuPhim();
                             rapChieuPhim.GetSubMenu();
-                            WriteLine(arrMenu[arrMenu.Length - 2]);
                             ReadKey();
                             break;
                         }
                     case 4:// Bảng thống kê kết quả tuyển sinh
                         {
-                           
+
                             SubMenu_BangThongKeKetQuaTuyenSinh bangTuyenSinh = new SubMenu_BangThongKeKetQuaTuyenSinh();
                             bangTuyenSinh.GetSubmenu();
-                            WriteLine(arrMenu[arrMenu.Length - 2]);
                             ReadKey();
                             break;
                         }
                     case 5:// bai tap thuc hanh so 2.1
                         {
-                           
+
                             SubMenu_btth21_BuildInTypeString subMenu = new SubMenu_btth21_BuildInTypeString();
                             subMenu.GetSubMenu();
                             ReadKey();
@@ -68,7 +72,7 @@ namespace KTLT2_TAODOITUONG
                         }
                     case 6:// Quan ly thoi gian
                         {
-                            
+
                             SubMenu_Time subMenu = new SubMenu_Time();
                             subMenu.GetSubMenu();
                             ReadKey();
@@ -76,7 +80,7 @@ namespace KTLT2_TAODOITUONG
                         }
                     case 7:// Quan ly author
                         {
-                            
+
                             Submenu_Author subMenu = new Submenu_Author();
                             subMenu.GetSubMenu();
                             ReadKey();
@@ -84,7 +88,7 @@ namespace KTLT2_TAODOITUONG
                         }
                     case 8:// Quan ly Tim Kiem 
                         {
-                             
+
                             SubMenu_TimKiemSapXep subMenu = new SubMenu_TimKiemSapXep();
                             subMenu.GetSubMenu();
                             ReadKey();
@@ -93,7 +97,7 @@ namespace KTLT2_TAODOITUONG
 
                     case 9:// Quan ly sap xep
                         {
-                            
+
                             Submenu_SapXep subMenu = new Submenu_SapXep();
                             subMenu.GetSubMenu();
                             ReadKey();
@@ -101,12 +105,7 @@ namespace KTLT2_TAODOITUONG
                         }
                     default:
                         {
-                            if (n == -1)
-                            {
-                                WriteLine(arrMenu[arrMenu.Length - 2]);
-                                ReadKey();
-                                break;
-                            }
+                            ReadKey();
                             break;
                         }
                 }
@@ -126,15 +125,16 @@ namespace KTLT2_TAODOITUONG
                 "Quan ly Tac gia",
                 "Quan ly Tim Kiem",
                 "Quan ly Sap xep",
-
-                "Press any key to continue.",
                 "-1.Thoat chuong trinh",
             };
-            string[] menuTitle = { "STT", "Ten chuc nang" };
+            DanhSachMenu arrMenuS = new DanhSachMenu();
 
-            TablePrinter tableMenu = new TablePrinter(menuTitle);
-            tableMenu.NhapMenu(arrMenu);
-            ShowMainMenu(arrMenu, tableMenu);
+            for (int i = 0; i < arrMenu.Length; i++)
+            {
+                arrMenuS.AddMenu(new Menu(arrMenu[i]));
+            }
+
+            ShowMainMenu(arrMenuS);
             WriteLine("Press any key to exit.");
             ReadKey();
         }

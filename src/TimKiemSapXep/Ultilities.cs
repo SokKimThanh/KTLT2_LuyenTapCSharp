@@ -8,6 +8,7 @@ namespace KTLT2_TAODOITUONG
 {
     public class Ultilities
     {
+        
         public static void XuatLine(int[] arr)
         {
             for (int i = 0; i < arr.Length; i++)
@@ -22,6 +23,15 @@ namespace KTLT2_TAODOITUONG
             for (int i = 0; i < arr.Length; i++)
             {
                 sum += $"{arr[i]}\t";
+            }
+            return sum.Trim();
+        }
+        public static string XuatTitle(string[] arr)
+        {
+            string sum = string.Empty;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                sum += $"{arr[i],-15}";
             }
             return sum.Trim();
         }

@@ -104,6 +104,8 @@
     <Compile Include="src\SinhVien\SubMenu_SinhVien.cs" />
     <Compile Include="src\Time\Time.cs" />
     <Compile Include="src\Time\SubMenu_Time.cs" />
+    <Compile Include="src\TimKiemSapXep\DanhSachMenu.cs" />
+    <Compile Include="src\TimKiemSapXep\Menu.cs" />
     <Compile Include="src\TimKiemSapXep\Submenu_SapXep.cs" />
     <Compile Include="src\TimKiemSapXep\Submenu_TimKiem.cs" />
     <Compile Include="src\TimKiemSapXep\TimKiem.cs" />

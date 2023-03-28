@@ -9,7 +9,7 @@ namespace KTLT2_TAODOITUONG.src.TimKiemSapXep
 {
     class Submenu_SapXep
     {
-        static void ShowMainMenu(string[] arrMenu, TablePrinter tableMenu)
+        static void ShowMainMenu(DanhSachMenu arrMenu)
         {
             // khai bao
             int menuNumber;
@@ -21,14 +21,21 @@ namespace KTLT2_TAODOITUONG.src.TimKiemSapXep
                 WriteLine("\n---------------------------------------------------------------------\n");
                 WriteLine("CHUONG TRINH CAI DAT GIAI THUAT SAP XEP");
                 // kiem tra nhap
-                tableMenu.Print();
+                arrMenu.ShowAllMenu();
                 // nhap lenh
                 Write($"Vui long nhap command hoac '-1' de ket thuc chuong trinh: ");
                 int.TryParse(ReadLine(), out menuNumber);
                 Console.WriteLine("Nhap n:");
                 //int k = Ultilities.NhapSoNguyen();
                 int k = 50;// so phan tu cua mang arr
-                WriteLine(arrMenu[menuNumber]);
+                try
+                {
+                    arrMenu.ShowMenuBySTT(menuNumber);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
                 switch (menuNumber)
                 {
                     case 0: // Interchange sort giam dan
@@ -261,7 +268,7 @@ namespace KTLT2_TAODOITUONG.src.TimKiemSapXep
                         {
                             if (menuNumber == -1)
                             {
-                                WriteLine(arrMenu[arrMenu.Length - 2]);
+                                Console.WriteLine(arrMenu.ShowMenuBySTT(-1));
                                 ReadKey();
                                 break;
                             }
@@ -285,12 +292,14 @@ namespace KTLT2_TAODOITUONG.src.TimKiemSapXep
                 "Press any key to continue.",
                 "-1.Thoat chuong trinh",
             };
-            string[] menuTitle = { "STT", "Ten chuc nang" };
+            DanhSachMenu arrMenuS = new DanhSachMenu();
+            for (int i = 0; i < arrMenu.Length; i++)
+            {
+                arrMenuS.AddMenu(new Menu(arrMenu[i]));
+            }
+            arrMenuS.ShowAllMenu();
 
-            TablePrinter tableMenu = new TablePrinter(menuTitle);
-            tableMenu.NhapMenu(arrMenu, 0);
-            ShowMainMenu(arrMenu, tableMenu);
-
+            ShowMainMenu(arrMenuS);
             WriteLine("Press any key to exit.");
             ReadKey();
         }
