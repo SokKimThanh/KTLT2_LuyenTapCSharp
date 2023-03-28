@@ -64,7 +64,6 @@ namespace KTLT2_TAODOITUONG.src.TimKiemSapXep
                         }
                     case 1: // Interchange sort tang dan
                         {
-
                             // khai bao
                             int[] arr;
                             int power = 0;// power: so lan thuc hien cong viec

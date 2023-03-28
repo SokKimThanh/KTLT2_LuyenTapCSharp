@@ -1,6 +1,7 @@
 ﻿using KTLT2_TAODOITUONG.src.Author;
 using KTLT2_TAODOITUONG.src.BTTH2._1;
 using KTLT2_TAODOITUONG.src.RapChieuPhim;
+using KTLT2_TAODOITUONG.src.TimKiemSapXep;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace KTLT2_TAODOITUONG
 
             // Binary search
             // sort list        
-            int ketquaBS = Ultilities.BinarySearch(arr, key);
+            int ketquaBS = TimKiem.BinarySearch(arr, key);
 
             //in ket qua  
             WriteLine("{0, -10} {1,-10}", "Vi tri binary search ", ketquaBS);
@@ -29,7 +30,7 @@ namespace KTLT2_TAODOITUONG
             WriteLine("\n\n---------------------------------------------------------------------");
             WriteLine("XOA TAT CA VI TRI KEY");
             int key = Ultilities.NhapSoNguyen();
-            Ultilities.DeleteAllWithKey(ref arr, key);
+            TimKiem.DeleteAllWithKey(ref arr, key);
             if (arr.Length != 0)
             {
                 WriteLine("\nDanh sach sau khi xoa: ");
@@ -53,7 +54,7 @@ namespace KTLT2_TAODOITUONG
             key = int.Parse(ReadLine());
 
             // order linear search
-            int ketquaOrderLNS = Ultilities.IncreaseLinearSearch(arr, key);
+            int ketquaOrderLNS = TimKiem.IncreaseLinearSearch(arr, key);
             //in ket qua 
             WriteLine("{0, -10} {1,-10}", "Vi tri order linear search", ketquaOrderLNS);
         }
@@ -62,7 +63,7 @@ namespace KTLT2_TAODOITUONG
             WriteLine("\n\n---------------------------------------------------------------------");
             WriteLine("CAI TIEN CHUONG TRINH \nLINEAR SEARCH TIM KEY TAI TAT CA VI TRI");
             int key = Ultilities.NhapSoNguyen();
-            int[] arrIndex = Ultilities.SearchAllWithKey(arr, key);
+            int[] arrIndex = TimKiem.SearchAllWithKey(arr, key);
             if (arrIndex.Length != 0)
             {
                 WriteLine("\nDanh sach index xuat hien la: " + Ultilities.XuatString(arrIndex.ToArray()));
@@ -79,7 +80,7 @@ namespace KTLT2_TAODOITUONG
             int key = Ultilities.NhapSoNguyen();
 
             // unorder linear search
-            int vitriDauTien = Ultilities.UnorderLinearSearch(arr, key);
+            int vitriDauTien = TimKiem.UnorderLinearSearch(arr, key);
             // in ket qua
             if (vitriDauTien != -1)
             {
@@ -115,7 +116,7 @@ namespace KTLT2_TAODOITUONG
             Array.Reverse(arr);
             Ultilities.XuatLine(arr);
             int key = Ultilities.NhapSoNguyen();
-            int ketquaDecreaseBS = Ultilities.DecreaseLinearSearch(arr, key);
+            int ketquaDecreaseBS = TimKiem.DecreaseLinearSearch(arr, key);
             //in ket qua  
             WriteLine("{0, -10} {1,-10}", "Vi tri ReverserLinearSearch", ketquaDecreaseBS);
         }
@@ -132,7 +133,7 @@ namespace KTLT2_TAODOITUONG
             Write("Vui long nhap key: ");
             int key = Ultilities.NhapSoNguyen();
             // in ket qua
-            Ultilities.DeleteAllWithSearchAllLinearSearch(ref arr, key);
+            TimKiem.DeleteAllWithSearchAllLinearSearch(ref arr, key);
             if (arr.Length == 0)
             {
                 WriteLine($"Không còn gì để xóa.");
@@ -152,7 +153,7 @@ namespace KTLT2_TAODOITUONG
             Write("Vui long nhap key: ");
             int key = Ultilities.NhapSoNguyen();
             // in ket qua
-            if (Ultilities.DeleteAllWithSearchOneLinearSearch(ref arr, key) == true)
+            if (TimKiem.DeleteAllWithSearchOneLinearSearch(ref arr, key) == true)
             {
                 WriteLine($"Xoa Thanh cong key {key}");
             }
@@ -175,7 +176,7 @@ namespace KTLT2_TAODOITUONG
             Ultilities.XuatLine(arr);
             Write("Vui long nhap key: ");
             int key = Ultilities.NhapSoNguyen();
-            int[] newBinaryIndex = Ultilities.BinarySearchAllWithKey(ref arr, key);
+            int[] newBinaryIndex = TimKiem.BinarySearchAllWithKey(ref arr, key);
             Array.Sort(newBinaryIndex);
             // in ket qua
             if (newBinaryIndex.Length != 0)
@@ -206,11 +207,12 @@ namespace KTLT2_TAODOITUONG
                 // nhap lenh
                 Write($"Vui long nhap command hoac '-1' de ket thuc chuong trinh: ");
                 int.TryParse(ReadLine(), out menuNumber);
+                WriteLine(arrMenu[menuNumber]);
                 switch (menuNumber)
                 {
                     case 0: // Search one with unorder Linear Search
                         {
-                            WriteLine(arrMenu[0]);
+
                             int[] arr;
                             NhapXuat(out arr);
                             SearchOneWithUnOderLinearSearch(arr);
@@ -220,7 +222,7 @@ namespace KTLT2_TAODOITUONG
                         }
                     case 1: // Search one with Order Linear Search
                         {
-                            WriteLine(arrMenu[1]);
+
                             int[] arr;
                             NhapXuat(out arr);
                             SearchAllWithOrderLinearSearch(arr);
@@ -230,7 +232,7 @@ namespace KTLT2_TAODOITUONG
                         }
                     case 2: // Search one with Reserve Linear Search
                         {
-                            WriteLine(arrMenu[2]);
+
                             int[] arr;
                             NhapXuat(out arr);
                             SearchAllWithReverserLinearSearch(arr);
@@ -240,7 +242,7 @@ namespace KTLT2_TAODOITUONG
                         }
                     case 3: // Search all with linear Search key
                         {
-                            WriteLine(arrMenu[3]);
+
                             int[] arr;
                             NhapXuat(out arr);
                             SearchAllWithLinearSearchKey(arr);
@@ -250,7 +252,7 @@ namespace KTLT2_TAODOITUONG
                         }
                     case 4: // Delete all with key
                         {
-                            WriteLine(arrMenu[4]);
+
                             int[] arr;
                             NhapXuat(out arr);
                             DeleteAllWithKey(ref arr);
@@ -260,7 +262,7 @@ namespace KTLT2_TAODOITUONG
                         }
                     case 5: // Delete all with Search all linear search
                         {
-                            WriteLine(arrMenu[5]);
+
                             int[] arr;
                             NhapXuat(out arr);
                             DeleteAllWithSearchAllLinearSearch(arr);
@@ -270,7 +272,7 @@ namespace KTLT2_TAODOITUONG
                         }
                     case 6: // Delete all with Search one linear search
                         {
-                            WriteLine(arrMenu[6]);
+
                             int[] arr;
                             NhapXuat(out arr);
                             DeleteAllWithSearchOneLinearSearch(arr);
@@ -280,7 +282,7 @@ namespace KTLT2_TAODOITUONG
                         }
                     case 7: // Binary Search unorder
                         {
-                            WriteLine(arrMenu[7]);
+
                             int[] arr;
                             NhapXuat(out arr);
                             UnorderBinarySearch(arr);
@@ -290,7 +292,7 @@ namespace KTLT2_TAODOITUONG
                         }
                     case 8: // Binary Search all with order
                         {
-                            WriteLine(arrMenu[8]);
+
                             int[] arr;
                             NhapXuat(out arr);
                             OrderBinarySearch(arr);
