@@ -104,8 +104,9 @@
     <Compile Include="src\SinhVien\SubMenu_SinhVien.cs" />
     <Compile Include="src\Time\Time.cs" />
     <Compile Include="src\Time\SubMenu_Time.cs" />
-    <Compile Include="src\TimKiemSapXep\Submenu_TimKiemSapXep.cs" />
-    <Compile Include="src\TimKiemSapXep\Utililies.cs" />
+    <Compile Include="src\TimKiemSapXep\Submenu_SapXep.cs" />
+    <Compile Include="src\TimKiemSapXep\Submenu_TimKiem.cs" />
+    <Compile Include="src\TimKiemSapXep\Ultilities.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

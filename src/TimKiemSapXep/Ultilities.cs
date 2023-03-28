@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 using static System.Console;
 namespace KTLT2_TAODOITUONG
 {
-    public class Utililies
+    public class Ultilities
     {
         public static void XuatLine(int[] arr)
         {
             for (int i = 0; i < arr.Length; i++)
             {
-                Write($"{arr[i]}\t");
+                Write($"{arr[i]} ");
             }
             Console.WriteLine();
         }
@@ -157,7 +157,7 @@ namespace KTLT2_TAODOITUONG
         public static void DeleteAllWithSearchAllLinearSearch(ref int[] arr, int key)
         {
             int[] indexArr = SearchAllWithKey(arr, key);
-            Utililies.XuatLine(indexArr);
+            Ultilities.XuatLine(indexArr);
             if (indexArr.Length != 0)
             {
                 for (int i = 0; i < indexArr.Length; i++)
@@ -237,8 +237,9 @@ namespace KTLT2_TAODOITUONG
         /// <param name="n"></param>
         /// <param name="d"></param>
         /// <returns></returns>
-        public static int[] NhapRandomMangSoNguyen(int n, Random d)
+        public static int[] NhapRandomMangSoNguyen(int n)
         {
+            Random d = new Random();
             int[] arr = new int[n];
             // nhap ran dom thong tin
             for (int i = 0; i < arr.Length; i++)
@@ -294,5 +295,39 @@ namespace KTLT2_TAODOITUONG
             return -1;
         }
 
+        public static void Swap(ref int v1, ref int v2)
+        {
+            int tmp = v1;
+            v1 = v2;
+            v2 = tmp;
+        }
+        /// <summary>
+        /// Hàm tìm vị trí nhỏ nhất posMin
+        /// </summary>
+        /// <param name="start">vi tri bat dau tim min</param>
+        /// <param name="arr">danh sach tim min</param>
+        /// <returns>posMin</returns>
+        public static int FindPosMin(int[] arr, int start)
+        {
+            // kiem tra tinh hop le vi tri bat dau
+            if (start < 0 && start > arr.Length)
+            {
+                return -1;// khong tim thay min
+            }
+            // khai bao 
+            int minValue;// tim min
+            int posMin = start;// cap nhat lai vi tri can tim min
+            minValue = arr[start];
+            for (int i = start + 1; i < arr.Length; i++)
+            {
+                // cap nhat min, pos neu thoa dieu kien
+                if (arr[i] < minValue)
+                {
+                    minValue = arr[i];// luu gia tri min de tiep tuc dieu kien
+                    posMin = i;// luu vi tri min de tiep tuc dieu kien
+                }
+            }
+            return posMin;
+        }
     }
 }

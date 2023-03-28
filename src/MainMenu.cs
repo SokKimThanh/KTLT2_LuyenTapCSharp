@@ -1,6 +1,7 @@
 ﻿using KTLT2_TAODOITUONG.src.Author;
 using KTLT2_TAODOITUONG.src.BTTH2._1;
 using KTLT2_TAODOITUONG.src.RapChieuPhim;
+using KTLT2_TAODOITUONG.src.TimKiemSapXep;
 using static System.Console;
 namespace KTLT2_TAODOITUONG
 {
@@ -18,11 +19,12 @@ namespace KTLT2_TAODOITUONG
                 // nhap lenh
                 Write($"Vui long nhap command hoac '-1' de ket thuc chuong trinh: ");
                 int.TryParse(ReadLine(), out n);
+                WriteLine(arrMenu[n]);
                 switch (n)
                 {
                     case 1: // Chuong trinh quan ly sinh vien
                         {
-                            WriteLine(arrMenu[0]);
+                           
                             SubMenu_SinhVien submenu = new SubMenu_SinhVien();
                             submenu.GetSubMenu();
                             WriteLine(arrMenu[arrMenu.Length - 2]);
@@ -31,7 +33,7 @@ namespace KTLT2_TAODOITUONG
                         }
                     case 2:// chuong trinh nhap diem 
                         {
-                            WriteLine(arrMenu[1]);
+                         
                             SubMenu_Sach gradeBook = new SubMenu_Sach();
                             gradeBook.GetSubMenu();
                             WriteLine(arrMenu[arrMenu.Length - 2]);
@@ -40,7 +42,7 @@ namespace KTLT2_TAODOITUONG
                         }
                     case 3: // rap chieu phim 
                         {
-                            WriteLine(arrMenu[2]);
+                          
                             SubMenu_RapChieuPhim rapChieuPhim = new SubMenu_RapChieuPhim();
                             rapChieuPhim.GetSubMenu();
                             WriteLine(arrMenu[arrMenu.Length - 2]);
@@ -49,7 +51,7 @@ namespace KTLT2_TAODOITUONG
                         }
                     case 4:// Bảng thống kê kết quả tuyển sinh
                         {
-                            WriteLine(arrMenu[3]);
+                           
                             SubMenu_BangThongKeKetQuaTuyenSinh bangTuyenSinh = new SubMenu_BangThongKeKetQuaTuyenSinh();
                             bangTuyenSinh.GetSubmenu();
                             WriteLine(arrMenu[arrMenu.Length - 2]);
@@ -58,7 +60,7 @@ namespace KTLT2_TAODOITUONG
                         }
                     case 5:// bai tap thuc hanh so 2.1
                         {
-                            WriteLine(arrMenu[4]);
+                           
                             SubMenu_btth21_BuildInTypeString subMenu = new SubMenu_btth21_BuildInTypeString();
                             subMenu.GetSubMenu();
                             ReadKey();
@@ -66,24 +68,33 @@ namespace KTLT2_TAODOITUONG
                         }
                     case 6:// Quan ly thoi gian
                         {
-                            WriteLine(arrMenu[5]);
+                            
                             SubMenu_Time subMenu = new SubMenu_Time();
                             subMenu.GetSubMenu();
                             ReadKey();
                             break;
                         }
-                    case 7:// Quan ly Tim Kiem Va sap xep
+                    case 7:// Quan ly author
                         {
-                            WriteLine(arrMenu[6]);
+                            
+                            Submenu_Author subMenu = new Submenu_Author();
+                            subMenu.GetSubMenu();
+                            ReadKey();
+                            break;
+                        }
+                    case 8:// Quan ly Tim Kiem 
+                        {
+                             
                             SubMenu_TimKiemSapXep subMenu = new SubMenu_TimKiemSapXep();
                             subMenu.GetSubMenu();
                             ReadKey();
                             break;
                         }
-                    case 8:// Quan ly author
+
+                    case 9:// Quan ly sap xep
                         {
-                            WriteLine(arrMenu[7]);
-                            Submenu_Author subMenu = new Submenu_Author();
+                            
+                            Submenu_SapXep subMenu = new Submenu_SapXep();
                             subMenu.GetSubMenu();
                             ReadKey();
                             break;
@@ -112,8 +123,10 @@ namespace KTLT2_TAODOITUONG
                 "Bang thong ke ket qua tuyen sinh",
                 "Chuong 2: Mot so kieu du lieu xay dung san trong c#(string)",
                 "Quan ly thoi gian",
-                "Quan ly Tim Kiem Va sap xep",
                 "Quan ly Tac gia",
+                "Quan ly Tim Kiem",
+                "Quan ly Sap xep",
+
                 "Press any key to continue.",
                 "-1.Thoat chuong trinh",
             };

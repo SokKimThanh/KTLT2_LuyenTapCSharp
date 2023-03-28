@@ -147,12 +147,17 @@ namespace KTLT2_TAODOITUONG.src.RapChieuPhim
         /// <param name="n">nhập số lượng phim cần lưu</param>
         public static Phim[] NhapDanhSachPhim(int n)
         {
+            if (n < 0)
+            {
+                throw new Exception("n phai lon hon 0");
+            }
             Phim[] danhSachPhim = new Phim[n];
             for (int i = 0; i < danhSachPhim.Length; i++)
             {
                 Thread.Sleep(TimeSpan.FromMilliseconds(20));
                 danhSachPhim[i] = NhapPhim();
             }
+
             return danhSachPhim;
         }
         /// <summary>

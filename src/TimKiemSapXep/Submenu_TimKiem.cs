@@ -11,32 +11,32 @@ namespace KTLT2_TAODOITUONG
 {
     class SubMenu_TimKiemSapXep
     {
-        public static void UnitTestUnOrderBinarySearch(int[] arr)
+        public static void UnorderBinarySearch(int[] arr)
         {
-            int key = Utililies.NhapSoNguyen();
+            int key = Ultilities.NhapSoNguyen();
             WriteLine("--------------------------------------------------------------------------------");
             WriteLine("CAI TIEN THUAT TOAN KIEM KIEM BANG THUAT TOAN BINARY SEARCH( Chua sap xep)".ToUpper());
 
             // Binary search
             // sort list        
-            int ketquaBS = Utililies.BinarySearch(arr, key);
+            int ketquaBS = Ultilities.BinarySearch(arr, key);
 
             //in ket qua  
             WriteLine("{0, -10} {1,-10}", "Vi tri binary search ", ketquaBS);
         }
-        public static void UnitTestDeleteAllWithKey(ref int[] arr)
+        public static void DeleteAllWithKey(ref int[] arr)
         {
             WriteLine("\n\n---------------------------------------------------------------------");
             WriteLine("XOA TAT CA VI TRI KEY");
-            int key = Utililies.NhapSoNguyen();
-            Utililies.DeleteAllWithKey(ref arr, key);
+            int key = Ultilities.NhapSoNguyen();
+            Ultilities.DeleteAllWithKey(ref arr, key);
             if (arr.Length != 0)
             {
                 WriteLine("\nDanh sach sau khi xoa: ");
-                Utililies.XuatLine(arr);
+                Ultilities.XuatLine(arr);
             }
         }
-        public static void UnitTestSearchAllWithOrderLinearSearch(int[] arr)
+        public static void SearchAllWithOrderLinearSearch(int[] arr)
         {
             int key;
             WriteLine("\n\n---------------------------------------------------------------------");
@@ -46,40 +46,40 @@ namespace KTLT2_TAODOITUONG
             WriteLine("\n  CHUONG TRINH DANG SAP XEP DANH SACH....\n");
             Array.Sort(arr);
             WriteLine("\n Danh SACH SAU KHI SAP XEP LA: \n");
-            Utililies.XuatLine(arr);
+            Ultilities.XuatLine(arr);
 
             //VA BAT DAU TIM KIEM CAI TIEN LINEAR SEARCH...
             WriteLine("\nVui long nhap key ban muon tim? ");
             key = int.Parse(ReadLine());
 
             // order linear search
-            int ketquaOrderLNS = Utililies.IncreaseLinearSearch(arr, key);
+            int ketquaOrderLNS = Ultilities.IncreaseLinearSearch(arr, key);
             //in ket qua 
             WriteLine("{0, -10} {1,-10}", "Vi tri order linear search", ketquaOrderLNS);
         }
-        public static void UnitTestSearchAllWithLinearSearchKey(int[] arr)
+        public static void SearchAllWithLinearSearchKey(int[] arr)
         {
             WriteLine("\n\n---------------------------------------------------------------------");
             WriteLine("CAI TIEN CHUONG TRINH \nLINEAR SEARCH TIM KEY TAI TAT CA VI TRI");
-            int key = Utililies.NhapSoNguyen();
-            int[] arrIndex = Utililies.SearchAllWithKey(arr, key);
+            int key = Ultilities.NhapSoNguyen();
+            int[] arrIndex = Ultilities.SearchAllWithKey(arr, key);
             if (arrIndex.Length != 0)
             {
-                WriteLine("\nDanh sach index xuat hien la: " + Utililies.XuatString(arrIndex.ToArray()));
+                WriteLine("\nDanh sach index xuat hien la: " + Ultilities.XuatString(arrIndex.ToArray()));
             }
             WriteLine("\n");
             WriteLine("\n\n---------------------------------------------------------------------");
         }
-        public static void UnitTestSearchOneWithUnOderLinearSearch(int[] arr)
+        public static void SearchOneWithUnOderLinearSearch(int[] arr)
         {
             // nhap key thuat toan chua sap xep unoder linear search
             WriteLine("---------------------------------------------------------------------");
             WriteLine("Thuat toan linear search(chua sap xep)".ToUpper());
             Write("Vui long nhap key: ");
-            int key = Utililies.NhapSoNguyen();
+            int key = Ultilities.NhapSoNguyen();
 
             // unorder linear search
-            int vitriDauTien = Utililies.UnorderLinearSearch(arr, key);
+            int vitriDauTien = Ultilities.UnorderLinearSearch(arr, key);
             // in ket qua
             if (vitriDauTien != -1)
             {
@@ -101,58 +101,58 @@ namespace KTLT2_TAODOITUONG
         public static void NhapXuat(out int[] arr)
         {
             // nhap 
-            int n = Utililies.NhapSoNguyen();
+            int n = Ultilities.NhapSoNguyen();
             Random d = new Random();
-            arr = Utililies.NhapRandomMangSoNguyen(n, d);
+            arr = Ultilities.NhapRandomMangSoNguyen(n);
             //int[] arr = { 0, -1, 8, 8, 8, 8, -1, 8 };
             // xuat
-            Utililies.XuatLine(arr);
+            Ultilities.XuatLine(arr);
             WriteLine();
         }
-        private static void UnitTestSearchAllWithReverserLinearSearch(int[] arr)
+        private static void SearchAllWithReverserLinearSearch(int[] arr)
         {
             // dao nguoc sap xep giam dan
             Array.Reverse(arr);
-            Utililies.XuatLine(arr);
-            int key = Utililies.NhapSoNguyen();
-            int ketquaDecreaseBS = Utililies.DecreaseLinearSearch(arr, key);
+            Ultilities.XuatLine(arr);
+            int key = Ultilities.NhapSoNguyen();
+            int ketquaDecreaseBS = Ultilities.DecreaseLinearSearch(arr, key);
             //in ket qua  
             WriteLine("{0, -10} {1,-10}", "Vi tri ReverserLinearSearch", ketquaDecreaseBS);
         }
 
-        private static void UnitTestDeleteAllWithSearchAllLinearSearch(int[] arr)
+        private static void DeleteAllWithSearchAllLinearSearch(int[] arr)
         {
             // nhap key thuat toan chua sap xep unoder linear search
             WriteLine("---------------------------------------------------------------------");
             WriteLine("Thuat toan delete with linear search all (da sap xep)".ToUpper());
 
             Array.Sort(arr);
-            Utililies.XuatLine(arr);
+            Ultilities.XuatLine(arr);
 
             Write("Vui long nhap key: ");
-            int key = Utililies.NhapSoNguyen();
+            int key = Ultilities.NhapSoNguyen();
             // in ket qua
-            Utililies.DeleteAllWithSearchAllLinearSearch(ref arr, key);
+            Ultilities.DeleteAllWithSearchAllLinearSearch(ref arr, key);
             if (arr.Length == 0)
             {
                 WriteLine($"Không còn gì để xóa.");
             }
             WriteLine($"Xoa thanh cong [key = {key}].");
-            Utililies.XuatLine(arr);
+            Ultilities.XuatLine(arr);
 
             WriteLine("Press any key to exit.");
             ReadKey();
         }
 
-        private static void UnitTestDeleteAllWithSearchOneLinearSearch(int[] arr)
+        private static void DeleteAllWithSearchOneLinearSearch(int[] arr)
         {
             // nhap key thuat toan chua sap xep unoder linear search
             WriteLine("---------------------------------------------------------------------");
             WriteLine("Thuat toan delete with linear search one (chua sap xep)".ToUpper());
             Write("Vui long nhap key: ");
-            int key = Utililies.NhapSoNguyen();
+            int key = Ultilities.NhapSoNguyen();
             // in ket qua
-            if (Utililies.DeleteAllWithSearchOneLinearSearch(ref arr, key) == true)
+            if (Ultilities.DeleteAllWithSearchOneLinearSearch(ref arr, key) == true)
             {
                 WriteLine($"Xoa Thanh cong key {key}");
             }
@@ -160,27 +160,27 @@ namespace KTLT2_TAODOITUONG
             {
                 WriteLine($"Khong the xoa key {key}");
             }
-            Utililies.XuatLine(arr);
+            Ultilities.XuatLine(arr);
 
             WriteLine("Press any key to exit.");
             ReadKey();
         }
 
-        private static void UnitTestOrderBinarySearch(int[] arr)
+        private static void OrderBinarySearch(int[] arr)
         {
             // nhap key thuat toan chua sap xep unoder linear search
             WriteLine("---------------------------------------------------------------------");
             WriteLine("Thuat toan Binary Search all with order( da sap xep )".ToUpper());
             Array.Sort(arr);
-            Utililies.XuatLine(arr);
+            Ultilities.XuatLine(arr);
             Write("Vui long nhap key: ");
-            int key = Utililies.NhapSoNguyen();
-            int[] newBinaryIndex = Utililies.BinarySearchAllWithKey(ref arr, key);
+            int key = Ultilities.NhapSoNguyen();
+            int[] newBinaryIndex = Ultilities.BinarySearchAllWithKey(ref arr, key);
             Array.Sort(newBinaryIndex);
             // in ket qua
             if (newBinaryIndex.Length != 0)
             {
-                WriteLine($"Tim thay key {key} tai cac vi tri: [{Utililies.XuatString(newBinaryIndex)}]");
+                WriteLine($"Tim thay key {key} tai cac vi tri: [{Ultilities.XuatString(newBinaryIndex)}]");
             }
             else
             {
@@ -213,7 +213,7 @@ namespace KTLT2_TAODOITUONG
                             WriteLine(arrMenu[0]);
                             int[] arr;
                             NhapXuat(out arr);
-                            UnitTestSearchOneWithUnOderLinearSearch(arr);
+                            SearchOneWithUnOderLinearSearch(arr);
 
                             ReadKey();
                             break;
@@ -223,7 +223,7 @@ namespace KTLT2_TAODOITUONG
                             WriteLine(arrMenu[1]);
                             int[] arr;
                             NhapXuat(out arr);
-                            UnitTestSearchAllWithOrderLinearSearch(arr);
+                            SearchAllWithOrderLinearSearch(arr);
 
                             ReadKey();
                             break;
@@ -233,7 +233,7 @@ namespace KTLT2_TAODOITUONG
                             WriteLine(arrMenu[2]);
                             int[] arr;
                             NhapXuat(out arr);
-                            UnitTestSearchAllWithReverserLinearSearch(arr);
+                            SearchAllWithReverserLinearSearch(arr);
 
                             ReadKey();
                             break;
@@ -243,7 +243,7 @@ namespace KTLT2_TAODOITUONG
                             WriteLine(arrMenu[3]);
                             int[] arr;
                             NhapXuat(out arr);
-                            UnitTestSearchAllWithLinearSearchKey(arr);
+                            SearchAllWithLinearSearchKey(arr);
 
                             ReadKey();
                             break;
@@ -253,7 +253,7 @@ namespace KTLT2_TAODOITUONG
                             WriteLine(arrMenu[4]);
                             int[] arr;
                             NhapXuat(out arr);
-                            UnitTestDeleteAllWithKey(ref arr);
+                            DeleteAllWithKey(ref arr);
 
                             ReadKey();
                             break;
@@ -263,7 +263,7 @@ namespace KTLT2_TAODOITUONG
                             WriteLine(arrMenu[5]);
                             int[] arr;
                             NhapXuat(out arr);
-                            UnitTestDeleteAllWithSearchAllLinearSearch(arr);
+                            DeleteAllWithSearchAllLinearSearch(arr);
 
                             ReadKey();
                             break;
@@ -273,7 +273,7 @@ namespace KTLT2_TAODOITUONG
                             WriteLine(arrMenu[6]);
                             int[] arr;
                             NhapXuat(out arr);
-                            UnitTestDeleteAllWithSearchOneLinearSearch(arr);
+                            DeleteAllWithSearchOneLinearSearch(arr);
 
                             ReadKey();
                             break;
@@ -283,7 +283,7 @@ namespace KTLT2_TAODOITUONG
                             WriteLine(arrMenu[7]);
                             int[] arr;
                             NhapXuat(out arr);
-                            UnitTestUnOrderBinarySearch(arr);
+                            UnorderBinarySearch(arr);
 
                             ReadKey();
                             break;
@@ -293,7 +293,7 @@ namespace KTLT2_TAODOITUONG
                             WriteLine(arrMenu[8]);
                             int[] arr;
                             NhapXuat(out arr);
-                            UnitTestOrderBinarySearch(arr);
+                            OrderBinarySearch(arr);
 
                             ReadKey();
                             break;
@@ -314,7 +314,7 @@ namespace KTLT2_TAODOITUONG
         }
 
 
-        internal void GetSubMenu()
+        public void GetSubMenu()
         {
             string[] arrMenu = new string[] {
                 "Search one with unorder Linear Search",

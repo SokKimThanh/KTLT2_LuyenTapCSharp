@@ -1,0 +1,41 @@
+1. Thư gửi quý khán giả đang xem video:
+Xin chào quý vị khán giả,
+Video này sẽ giúp bạn, khán giả đang xem, quý vị ham học hỏi, đam mê lập trình. Người mà sẽ dành thời gian để luyện tập hàng giờ để đạt được kỹ năng tạo đối tượng trong C#. Đạt được kỹ năng điều khiển vòng lặp, biến, tạo menu, tạo submenu phân cấp, điều khiển lưu trữ mã bằng command line GIT CLI trực tiếp trên Visual Studio. Đạt được kỹ năng phân tích vấn đề. Và với sự kiên trì vô bờ bến để đi đến thành công. 
+Xin chân thành cảm ơn quý vị khán giả!
+Trân trọng,
+Sok Kim Thanh
+
+2. Chú ý thao tác với dữ liệu: 
+- "Toàn bộ mã nguồn đều là free nên quý vị đừng push vào nhánh master để tránh gây lỗi. Chỉ có thể tải về để xem thôi ạ!".
+3. Mã nguồn tải về tại địa chỉ website: https://github.com/SokKimThanh/LuyenTapCSharp
+4. Nội dung video gồm 4 phần:
+Phần 1: Hướng đến các đối tượng mong muốn giỏi lập trình hơn, đối tượng ôn tập bài vở kỹ thuật lập trình đang học tại trường TDC thủ đức college.
+Phần 2: Phân tích vấn đề 'Bảng thống kê kết quả tuyển sinh' từ excel có thể chuyển thành phần mềm như thế nào.
+Phần 3: Tạo menu, submenu, sử dụng git cli command
+Phần 4: Sắp xếp danh sách bằng lamda expression
+5. Phần mềm sử dụng để tạo nên video gồm:
+Visual Studio 2022, Figma, Premier Pro 2021, Trích đoạn Nhạc ghi âm đã comment xin phép tại kênh  @MusicLabChill 
+
+6. Phân cảnh video chapters
+0:00 Ai có thể xem video này?
+2:09 Demo sản phẩm thu được
+2:40 Giải thích cụ thể từng bước làm gì trong các phần
+5:55 Giải thích hướng xây dựng phần mềm
+10:09 Giải thích cụ thể bước tạo submenu con
+18:00 Thực hành tạo submenu tua nhanh
+21:21 Giải thích thiết kế hướng đối tượng blue print (3 đối tượng đầu tiên) 
+24:13 Coding thiết kế hướng đối tượng(3 đối tượng đầu tiên)
+27:08 Giải thích cụ thể nhập xuất 3 đối tượng đầu tiên
+59:58 Demo Thực hành coding nhập/ xuất 3 đối tượng đầu tiên (full)
+01:27:52 Thao tác git trên comman line
+01:29:09 Cập nhật biến thành viên các đối tượng thành private
+01:32:08 Thiết kế đối tượng bảng thống kê voice
+01:35:15 Command 4 NhậpXuat Thông tin kết quả tuyển sinh 
+01:38:11 Nhập Kết quả tuyển sinh 
+01:43:39 Danh sách thống kê kết quả tuyển sinh voice
+01:50:05  Demo full coding Danh sách thống kê kết quả tuyển sinh voice
+01:56:34 Sử dụng GIT bash trên visual studio
+02:00:42 Giới thiệu sử dụng sort collection lên danh sách nhỏ 
+02:01:47 Giải thích cách Sử dụng sort collection danh sách nhỏ  demo
+02:03:19 Coding Full: thực hành cách sử dụng sort collection lên danh sách thống kê(music)
+02:07:26 Giải thích cụ thể cách sử dụng lamda expression sort lên danh sách thống kê
