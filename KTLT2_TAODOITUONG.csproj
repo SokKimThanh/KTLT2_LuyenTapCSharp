@@ -78,6 +78,10 @@
     <Compile Include="src\Helpers\TaoMenuMessage.cs" />
     <Compile Include="src\Helpers\TaoSoSanh.cs" />
     <Compile Include="src\Helpers\TaoType.cs" />
+    <Compile Include="src\KeThua\DanhSachNhanVien.cs" />
+    <Compile Include="src\KeThua\NhanVien.cs" />
+    <Compile Include="src\KeThua\Submenu_nhanvien.cs" />
+    <Compile Include="src\KeThua\TruongPhong.cs" />
     <Compile Include="src\RapChieuPhim\Phim.cs" />
     <Compile Include="src\Sach\SubMenu_Sach.cs" />
     <Compile Include="src\Sach\Sach.cs" />

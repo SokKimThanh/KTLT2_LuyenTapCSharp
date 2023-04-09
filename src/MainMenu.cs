@@ -1,5 +1,6 @@
 ﻿using KTLT2_TAODOITUONG.src.Author;
 using KTLT2_TAODOITUONG.src.BTTH2._1;
+using KTLT2_TAODOITUONG.src.KeThua;
 using KTLT2_TAODOITUONG.src.RapChieuPhim;
 using KTLT2_TAODOITUONG.src.TimKiemSapXep;
 using System;
@@ -103,6 +104,14 @@ namespace KTLT2_TAODOITUONG
                             ReadKey();
                             break;
                         }
+                    case 10:// Ke thua nhan vien - truong phong
+                        {
+
+                            Submenu_nhanvien subMenu = new Submenu_nhanvien();
+                            subMenu.GetSubMenu();
+                            ReadKey();
+                            break;
+                        }
                     default:
                         {
                             ReadKey();
@@ -125,6 +134,7 @@ namespace KTLT2_TAODOITUONG
                 "Quan ly Tac gia",
                 "Quan ly Tim Kiem",
                 "Quan ly Sap xep",
+                "Ke thua nhan vien - truong phong",
                 "-1.Thoat chuong trinh",
             };
             DanhSachMenu arrMenuS = new DanhSachMenu();
