@@ -3,7 +3,8 @@ using System;
 using static System.Console;
 /*
  * Sok Kim Thanh
- * 9/4/2023 3:12PM;
+ * bat dau luc: 9/4/2023 3:12PM;
+ * ket thuc luc: 9/4/2023 4:46PM;
  */
 namespace KTLT2_TAODOITUONG.src.KeThua
 {
