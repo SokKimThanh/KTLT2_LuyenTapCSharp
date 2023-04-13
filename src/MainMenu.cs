@@ -1,5 +1,6 @@
 ﻿using KTLT2_TAODOITUONG.src.Author;
 using KTLT2_TAODOITUONG.src.BTTH2._1;
+using KTLT2_TAODOITUONG.src.DSArrayList_LinkedList;
 using KTLT2_TAODOITUONG.src.KeThua;
 using KTLT2_TAODOITUONG.src.RapChieuPhim;
 using KTLT2_TAODOITUONG.src.TimKiemSapXep;
@@ -23,7 +24,7 @@ namespace KTLT2_TAODOITUONG
                 int.TryParse(ReadLine(), out n);
                 try
                 {
-                    WriteLine(arrMenu.ShowMenuBySTT(n).toString());
+                    WriteLine(arrMenu.ShowMenuBySTT(n-1).toString());
                 }
                 catch (Exception ex)
                 {
@@ -112,6 +113,22 @@ namespace KTLT2_TAODOITUONG
                             ReadKey();
                             break;
                         }
+                    case 11:// thu nghiem Danh sach lien ket linkedlist
+                        {
+
+                            Submenu_LinkedList subMenu = new Submenu_LinkedList();
+                            subMenu.GetSubMenu();
+                            ReadKey();
+                            break;
+                        }
+                    case 12:// thu nghiem Danh sach array list
+                        {
+
+                            Submenu_ArrayList subMenu = new Submenu_ArrayList();
+                            subMenu.GetSubMenu();
+                            ReadKey();
+                            break;
+                        }
                     default:
                         {
                             ReadKey();
@@ -135,6 +152,8 @@ namespace KTLT2_TAODOITUONG
                 "Quan ly Tim Kiem",
                 "Quan ly Sap xep",
                 "Ke thua nhan vien - truong phong",
+                "Thu nghiem Danh sach lien ket linkedlist",
+                "Thu nghiem Danh sach arrayList",
                 "-1.Thoat chuong trinh",
             };
             DanhSachMenu arrMenuS = new DanhSachMenu();

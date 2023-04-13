@@ -65,6 +65,12 @@
     <Compile Include="src\Author\Author.cs" />
     <Compile Include="src\Author\Search.cs" />
     <Compile Include="src\Author\Submenu_Author.cs" />
+    <Compile Include="src\BangDiem\DiemTrungBinh.cs" />
+    <Compile Include="src\DSArrayList_LinkedList\MyArrayList.cs" />
+    <Compile Include="src\DSArrayList_LinkedList\MyLinkedList.cs" />
+    <Compile Include="src\DSArrayList_LinkedList\MyNode.cs" />
+    <Compile Include="src\DSArrayList_LinkedList\Submenu_ArrayList.cs" />
+    <Compile Include="src\DSArrayList_LinkedList\Submenu_LinkedList.cs" />
     <Compile Include="src\Hanghoa\HangHoa.cs" />
     <Compile Include="src\BangThongKeKetQuaTuyenSinh\KetQuaTuyenSinh.cs" />
     <Compile Include="src\BangThongKeKetQuaTuyenSinh\DoiTuongTuyenSinh.cs" />
