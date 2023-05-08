@@ -1,6 +1,8 @@
 ﻿using KTLT2_TAODOITUONG.src.Author;
+using KTLT2_TAODOITUONG.src.BangDiem;
 using KTLT2_TAODOITUONG.src.BTTH2._1;
 using KTLT2_TAODOITUONG.src.DSArrayList_LinkedList;
+using KTLT2_TAODOITUONG.src.K_DaHinh.DaiLy;
 using KTLT2_TAODOITUONG.src.KeThua;
 using KTLT2_TAODOITUONG.src.RapChieuPhim;
 using KTLT2_TAODOITUONG.src.TimKiemSapXep;
@@ -24,7 +26,7 @@ namespace KTLT2_TAODOITUONG
                 int.TryParse(ReadLine(), out n);
                 try
                 {
-                    WriteLine(arrMenu.ShowMenuBySTT(n-1).toString());
+                    WriteLine(arrMenu.ShowMenuBySTT(n - 1).toString());
                 }
                 catch (Exception ex)
                 {
@@ -129,6 +131,23 @@ namespace KTLT2_TAODOITUONG
                             ReadKey();
                             break;
                         }
+                    case 13:// Thu nghiem diem trung binh
+                        {
+
+                            DiemTrungBinh dtb = new DiemTrungBinh();
+                            double diemTrungBinh = 8.5;
+                            Console.WriteLine(dtb.KetQuaXepLoai(diemTrungBinh));
+                            ReadKey();
+                            break;
+                        }
+                    case 14:
+                        {
+
+                            Submenu_DaiLy subMenu = new Submenu_DaiLy();
+                            subMenu.GetSubMenu();
+                            ReadKey();
+                            break;
+                        }
                     default:
                         {
                             ReadKey();
@@ -151,9 +170,12 @@ namespace KTLT2_TAODOITUONG
                 "Quan ly Tac gia",
                 "Quan ly Tim Kiem",
                 "Quan ly Sap xep",
-                "Ke thua nhan vien - truong phong",
+                "Thu nghiem Ke thua nhan vien - truong phong",
                 "Thu nghiem Danh sach lien ket linkedlist",
                 "Thu nghiem Danh sach arrayList",
+                "Thu nghiem diem trung binh",
+                //"Thu nghiem ke thua benh nhan - benh nhan ngoai tru - benh nhan noi tru",
+                "Thu nghiem da hinh Dai ly",
                 "-1.Thoat chuong trinh",
             };
             DanhSachMenu arrMenuS = new DanhSachMenu();
